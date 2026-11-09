@@ -1,0 +1,5 @@
+# private working notes and recon of the original app
+replica/
+.gstack/
+node_modules/
+.DS_Store
