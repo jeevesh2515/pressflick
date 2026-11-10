@@ -132,7 +132,7 @@ The contact-sheet frames and ratio thumbnails stay full colour, never duotoned: 
 - Pill buttons as stickers; 22px / 18px rounded containers.
 - Overprint: a hard-edged, zero-blur offset second plate on display heads and plates, multiplied.
 - Halftone dot screen (7px pitch) as the only texture.
-- Trim furniture: crop marks and plate slugs at section corners.
+- Trim furniture: crop marks at section corners.
 - Archivo only, expanded (wdth 125) heavy uppercase for display.
 
 ## Colors
@@ -169,7 +169,7 @@ Warm paper and ink on ink: five hues plus navy, no neutrals beyond paper-tinted 
 - **Headline** (900, clamp(2.4rem, 5.6vw, 4.6rem), 0.92): section h2; the closing h2 scales to 6rem.
 - **Title** (900, clamp(1.4rem, 2.4vw, 2rem), 1, uppercase): step titles. Editor titles are 18-20px at the same weight and width.
 - **Body** (400-650, 17px, 1.55): copy at 30-62ch; hero intro 550 weight.
-- **Label** (800, 11-14px, 0.1-0.14em, uppercase, wdth 125): plate bars, slugs, figure captions and film-strip status. Furniture inside the object, not an introduction to a heading.
+- **Label** (800, 11-14px, 0.1-0.14em, uppercase, wdth 125): demo metadata, figure captions and film-strip status. Furniture inside the object, not an introduction to a heading.
 
 ### Named Rules
 **The Off-Register Rule.** Display heads get the `.overprint` second plate (`text-shadow: .045em .035em 0`, zero blur) in the section's overprint colour. No blurred text shadows.
@@ -190,7 +190,7 @@ Depth is printed, not lit. Cards and plates carry a soft lifted shadow with a la
 
 ## Shapes
 
-Round and sticker-like. Pills (999px) for every button, nav, chip, segment and caption tag. Containers: 22px (plates, editor panels, preview), 18px (contact frames), 14px (fields, canvas, video), 16px (peek frames and ratio thumbs), 10px (images inside frames). Borders are 2px navy on landing buttons and FAQ rows, 3px navy on ratio images, 1px editor-line in the editor. Focus rings are 3px (landing, navy; yellow on blue/closing/ticker grounds) and 2px yellow in the editor. Trim: 22px crop-mark corners (1.5px) and plate slugs; editor registration corners 18px, 1px.
+Round and sticker-like. Pills (999px) for every button, nav, chip, segment and caption tag. Containers: 22px (plates, editor panels, preview), 18px (contact frames), 14px (fields, canvas, video), 16px (peek frames and ratio thumbs), 10px (images inside frames). Borders are 2px navy on landing buttons and FAQ rows, 3px navy on ratio images, 1px editor-line in the editor. Focus rings are 3px (landing, navy; yellow on blue/closing/ticker grounds) and 2px yellow in the editor. Trim: 22px crop-mark corners (1.5px); editor registration corners 18px, 1px.
 
 ## Components
 
@@ -221,8 +221,8 @@ Landing: a paper pill rail with 44px pill links (pink-wash hover) and a small st
 ### Halftone screen
 `radial-gradient` dots at 7px pitch, multiplied, masked by a diagonal gradient so coverage is uneven. Section screens use the section's own dot colour; the hero and close have their own.
 
-### Plate and trim furniture
-Crop marks at the top-left and bottom-right of each section (inset 18px) and a bottom-right slug "Plate 0N" naming the ink. Hidden under 640px.
+### Section trim
+Decorative crop marks at the top-left and bottom-right of each section (inset 18px). Plate numbers and ink-name captions were removed at the owner’s request; the sample metadata shows only resolution and cut rate. Source evidence: index.html and landing.css.
 
 ### Fountain and ticker
 Hero fountain: pink, yellow and blue ink bars multiplied over paper, the pink bar drifting 22s ease-in-out alternate. Closing section has a pink gradient rising from the bottom with a dotted screen. Ticker is a navy band with yellow borders and a 38s linear loop that pauses on hover; the held word is a yellow tag.

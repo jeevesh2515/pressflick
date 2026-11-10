@@ -1,8 +1,10 @@
 # Release verification — 10 November 2026
 
-**The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Current source is on `release/riso-production-readiness`; GitHub main is unchanged and the repository remains private. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
+**The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Release source is on `release/riso-production-readiness`; GitHub main is unchanged and the repository remains private. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
 
-## Current production
+The plate-caption removal follow-up below supersedes only the baseline deployment identity and landing HTML/CSS hashes. All full-audit counts remain historical results for the reviewed baseline.
+
+## Full-audit production baseline
 
 - Public landing: https://pressflick.vercel.app; editor: https://pressflick.vercel.app/editor.html.
 - Production deployment: `dpl_9VH3CW5NJAApZTPvi22ucCkURepo`, READY, created 10 November 2026 at 15:38:15 UTC.
@@ -53,3 +55,9 @@ No open reproduced S1/S2 remains in the checked source and production flows. Tha
 Use [HUMAN-CHECKS.md](HUMAN-CHECKS.md) on the public site before a broad promotional release. No new domain is required to use the existing address. `pressflick.app` remains optional; no domain was bought or DNS changed. Making the repository public remains a separate owner decision.
 
 A one-time post-launch research follow-up is scheduled for **10 February 2027 at 09:00 Europe/London**, three calendar months after the owner-confirmed 10 November launch, via automation `pressflick-three-month-research-review`. It requires in-site Reddit/X research, records access limitations, retains the private ten-creators plan and authorizes no outreach. No announcements or creator messages were sent.
+
+## Plate-caption removal follow-up — 10 November 2026
+
+At the owner's request, removed the four bottom-of-section plate numbers/ink names and the sample's Plate 01 prefix. Crop marks and functional sample metadata remain. Unused slug CSS was deleted; design records updated. No editor or export code changed.
+
+Production is now READY deployment `dpl_HNdPiQ3jB8simaVH1fjnE5nRRBDu` (`pressflick-iwqlfl0cv-jeeveshs-projects-68cc441e.vercel.app`), still served publicly at https://pressflick.vercel.app. This small follow-up ran `npm test` (9/9) and `npx playwright test test/e2e/landing.spec.js` (9/9, three per Chromium/Firefox/WebKit; 13.7s). The full 75-case suite and export/media/performance tests were not rerun for this markup/style deletion. Source/test logs: local `replica/evidence/plate-removal-{unit,e2e}.log`, `plate-removal-results.json`. Live hash and desktop/mobile label checks are recorded in `plate-removal-live.json`; the current 49-file public ZIP was regenerated. No new physical-device or human quality claims are made.

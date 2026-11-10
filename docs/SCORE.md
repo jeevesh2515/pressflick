@@ -1,6 +1,6 @@
 # Evidence-based readiness score
 
-Updated 10 November 2026 for the Riso release on `release/riso-production-readiness` and production deployment `dpl_9VH3CW5NJAApZTPvi22ucCkURepo`. **The owner's ≥8.5 in every area gate remains unmet.** Deployment and automated tests passing do not establish human/device quality.
+Updated 10 November 2026 for the Riso release on `release/riso-production-readiness` and its full-audit production baseline `dpl_9VH3CW5NJAApZTPvi22ucCkURepo`. The later plate-caption removal and current deployment are recorded in [verification](VERIFICATION.md); this minor copy/style deletion does not rescore the product. **The owner's ≥8.5 in every area gate remains unmet.** Deployment and automated tests passing do not establish human/device quality.
 
 All ratings below are **provisional engineering judgments [Likely]**, not calibrated user-satisfaction measurements. Rule: 8.5 requires observed function, a relevant independent check and no open major finding in the stated scope. Missing material human/device evidence caps the affected area at 8.0. The design review uses its own stated rubric. No average hides a failing area.
 
