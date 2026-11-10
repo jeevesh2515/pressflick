@@ -1,3 +1,7 @@
+# Historical builder phase log
+
+The table below records the initial build, not the current verified state. Takeover results and evidence supersede it in docs/VERIFICATION.md; independent reports are in docs/reviews/. Historical claims were not all revalidated.
+
 # Phases
 
 Dated 2026-11-09. One session.
@@ -15,3 +19,7 @@ Dated 2026-11-09. One session.
 | 9 | Brand | replica-brand | Pressflick. Notes kept private. Sweep clean in shipped files | done. Trademark search not run |
 | 10 | Launch | replica-launch | Landing sections, FAQ, privacy, terms, favicon. launch notes kept private | done. No social image |
 | 11 | Deploy | replica-deploy | Preflight run, notes kept private | not deployed: 3 blockers, and it needs the owner's accounts |
+
+## Current release disposition — 10 November 2026
+
+The historical table above is superseded for deployment by docs/VERIFICATION.md: the Riso landing/editor are public on the existing Vercel alias, fresh automated/source/live checks are recorded there, and the private repository remains owner controlled. The post-launch research follow-up is scheduled for 10 February 2027; the private ten-creators plan remains. No original-product recon/parity rerun or new outreach was performed during this release verification. The strict all-area score gate remains unmet as documented in docs/SCORE.md.

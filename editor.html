@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor | Pressflick</title>
+  <meta name="description" content="Type a phrase, pick a word, download a text match cut video. Free, MIT-licensed, no ads, no signup. Runs entirely in your browser.">
+  <meta name="referrer" content="no-referrer">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pressflick — make a word hold still">
+  <meta property="og:description" content="Text match cut videos made in your browser. Free, MIT-licensed, no ads or account.">
+  <!-- LAUNCH BLOCKER: replace pressflick.example with the owner's chosen production domain. -->
+  <meta property="og:url" content="https://pressflick.example/">
+  <meta property="og:image" content="https://pressflick.example/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pressflick. One word holds still. The page keeps changing.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src blob:; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="./">Pressflick</a>
+    <h1 class="editor-title">Make your match cut</h1>
+    <span>One word holds still while the newspaper page behind it changes 12 times a second. No ads, no signup, MIT-licensed.</span>
+  </header>
+
+  <main>
+    <form id="controls">
+      <label for="text">Phrase</label>
+      <input id="text" name="text" maxlength="80" autocomplete="off" placeholder="Type a phrase, press / to focus" value="Everything is going according to plan">
+
+      <span class="label" id="words-label">Word to lock</span>
+      <div id="words" role="group" aria-labelledby="words-label"></div>
+
+      <div class="row" id="examples" role="group" aria-label="Examples">
+        <span class="label">Try</span>
+        <button type="button" data-focus="0">Nobody saw it coming</button>
+        <button type="button" data-focus="1">The truth about sleep</button>
+        <button type="button" data-focus="0">Rent went up again</button>
+      </div>
+
+      <fieldset>
+        <legend>Aspect ratio</legend>
+        <label><input type="radio" name="ratio" value="9:16" checked> 9:16</label>
+        <label><input type="radio" name="ratio" value="1:1"> 1:1</label>
+        <label><input type="radio" name="ratio" value="16:9"> 16:9</label>
+      </fieldset>
+
+      <div class="row">
+        <label>Sound
+          <select name="sound">
+            <option value="paper">Paper shuffle</option>
+            <option value="shutter">Camera shutter</option>
+            <option value="film">Film advance</option>
+            <option value="polaroid">Polaroid</option>
+            <option value="flash">Flash pop</option>
+            <option value="none">No sound</option>
+          </select>
+        </label>
+        <button type="button" id="hear">Hear it</button>
+      </div>
+
+      <div class="row">
+        <label>Paper
+          <select name="style">
+            <option value="newsprint">Newsprint</option>
+            <option value="mixed">Mixed, with dark pages</option>
+          </select>
+        </label>
+        <label>Highlighter <input type="color" name="highlight" value="#ffd23f"></label>
+        <label>Format
+          <select name="format">
+            <option value="mp4">MP4</option>
+            <option value="webm">WebM</option>
+          </select>
+        </label>
+      </div>
+
+      <label for="cps">Cuts per second <output id="cps-out"></output>
+        <input id="cps" type="range" name="cps" min="4" max="16" step="1" value="12"></label>
+      <label for="zoom">Zoom <output id="zoom-out"></output>
+        <input id="zoom" type="range" name="zoom" min="1" max="2.5" step="0.1" value="1.5"></label>
+      <label for="blur">Blur <output id="blur-out"></output>
+        <input id="blur" type="range" name="blur" min="0" max="2" step="0.1" value="1"></label>
+      <label for="duration">Length in seconds <output id="duration-out"></output>
+        <input id="duration" type="range" name="duration" min="2" max="10" step="0.5" value="5"></label>
+
+      <div class="row">
+        <button id="download" class="primary">Download video</button>
+        <button type="button" id="shuffle">Shuffle pages</button>
+        <button type="button" id="share">Copy link</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section class="preview" aria-label="Preview">
+      <div class="film-label">
+        <span class="reg reg-tl" aria-hidden="true"></span><span class="reg reg-tr" aria-hidden="true"></span><span class="reg reg-bl" aria-hidden="true"></span><span class="reg reg-br" aria-hidden="true"></span>
+        <div class="film-strip" aria-hidden="true"><span>Preview</span><span class="film-live"></span></div>
+        <canvas id="stage" width="1080" height="1920" role="img" aria-label="Live preview of the match cut"></canvas>
+      </div>
+      <p id="empty" hidden>Type a phrase to see your match cut.</p>
+      <div class="row">
+        <button type="button" id="play">Pause</button>
+        <small>The preview flashes quickly. Pause it if flashing bothers you.</small>
+      </div>
+    </section>
+  </main>
+
+  <section class="info" aria-label="About Pressflick">
+    <div>
+      <h2>How it works</h2>
+      <ol>
+        <li>Type a phrase.</li>
+        <li>Tap the word that should hold still.</li>
+        <li>Press Download video.</li>
+      </ol>
+    </div>
+    <div>
+      <h2>What you get</h2>
+      <ul>
+        <li>No ad before the video, or after it.</li>
+        <li>You see the clip before you download it.</li>
+        <li>1080p, no watermark, yours to use anywhere.</li>
+        <li>No account, no cookies, nothing uploaded.</li>
+        <li>Free software under the MIT licence.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Questions</h2>
+      <details><summary>Is it really free?</summary><p>Yes. It is a static page with no server to pay for, so there is nothing to charge for.</p></details>
+      <details><summary>Where does my text go?</summary><p>The video is drawn and recorded inside your browser. A copied link contains your phrase after the # symbol; that part is not sent to the host. Anyone you send the link to can read the phrase.</p></details>
+      <details><summary>MP4 or WebM?</summary><p>MP4 where your browser can record it, WebM otherwise. The file name tells you which you got.</p></details>
+      <details><summary>Why did my video stutter?</summary><p>MP4 uses a frame-exact encoder when supported. WebM and fallback exports record in real time: keep the tab in front until it says Saved.</p></details>
+      <details><summary>Can I use it for client work?</summary><p>Yes. Do not use it to pass off invented headlines or quotes as real ones.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <span>Your text never leaves this page. Do not use it to fake real headlines or quotes.</span>
+    <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T04:54:40.774648Z",
+  "title": "Design System: Pressflick",
+  "extensions": {
+    "colorMeta": {
+      "sunflower": {
+        "role": "primary",
+        "displayName": "Sunflower",
+        "canonical": "#ffd23f",
+        "tonalRamp": [
+          "#665419",
+          "#997e26",
+          "#cca832",
+          "#ffd23f",
+          "#ffdd6f",
+          "#ffe695",
+          "#ffefbc",
+          "#fff8e2"
+        ]
+      },
+      "fluo-pink": {
+        "role": "secondary",
+        "displayName": "Fluo Pink",
+        "canonical": "#ff4f9a",
+        "tonalRamp": [
+          "#66203e",
+          "#992f5c",
+          "#cc3f7b",
+          "#ff4f9a",
+          "#ff7bb3",
+          "#ff9ec7",
+          "#ffc1dc",
+          "#ffe5f0"
+        ]
+      },
+      "riso-blue": {
+        "role": "secondary",
+        "displayName": "Riso Blue",
+        "canonical": "#1d2b8f",
+        "tonalRamp": [
+          "#0c1139",
+          "#111a56",
+          "#172272",
+          "#1d2b8f",
+          "#5660ab",
+          "#838ac1",
+          "#b0b5d8",
+          "#dddfee"
+        ]
+      },
+      "teal-ink": {
+        "role": "secondary",
+        "displayName": "Teal Ink",
+        "canonical": "#00a37a",
+        "tonalRamp": [
+          "#004131",
+          "#006249",
+          "#008262",
+          "#00a37a",
+          "#40ba9b",
+          "#73ccb6",
+          "#a6dfd0",
+          "#d9f1eb"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f6f1e7",
+        "tonalRamp": [
+          "#62605c",
+          "#94918b",
+          "#c5c1b9",
+          "#f6f1e7",
+          "#f8f4ed",
+          "#faf7f2",
+          "#fcfaf7",
+          "#fefdfb"
+        ]
+      },
+      "navy-ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "canonical": "#141b5c",
+        "tonalRamp": [
+          "#080b25",
+          "#0c1037",
+          "#10164a",
+          "#141b5c",
+          "#4f5485",
+          "#7e82a5",
+          "#adafc6",
+          "#dcdde7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1, Archivo 900 wdth 125 uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2 with overprint."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Step and editor titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Copy at 17px/1.55."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Plate bars, slugs, captions inside objects."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-lift",
+        "value": "0 14px 28px -14px rgba(20,27,92,.55)",
+        "purpose": "Sticker button at rest."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 24px 40px -26px rgba(20,27,92,.8)",
+        "purpose": "Contact frames and peeks."
+      },
+      {
+        "name": "editor-depth",
+        "value": "0 18px 40px -20px rgba(6,10,60,.7)",
+        "purpose": "Editor panel and preview."
+      },
+      {
+        "name": "overprint-text",
+        "value": ".045em .035em 0 var(--overprint)",
+        "purpose": "Zero-blur second plate on display heads."
+      },
+      {
+        "name": "second-plate",
+        "value": "::before pink, translate 10px 9px, mix-blend-mode multiply",
+        "purpose": "Hard-edged depth on plates and ratio thumbs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Button lift, tilt settle, hover rises (.4-.6s)."
+      },
+      {
+        "name": "drum",
+        "value": "22s ease-in-out infinite alternate, translate -4% to 5%",
+        "purpose": "Hero fountain pink ink drift."
+      },
+      {
+        "name": "tick",
+        "value": "38s linear infinite, pauses on hover",
+        "purpose": "Ticker band."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "editor-stack",
+        "value": "760px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "editor-rail",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Sticker pill in sunflower with navy edge.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Open editor</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid #141b5c;background:#ffd23f;color:#141b5c;font:800 17px Archivo,system-ui,sans-serif;text-decoration:none;box-shadow:0 14px 28px -14px rgba(20,27,92,.55);transition:translate .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}.ds-btn:hover{translate:0 -3px;box-shadow:0 22px 34px -16px rgba(20,27,92,.6)}.ds-btn:active{translate:0 1px}.ds-btn:focus-visible{outline:3px solid #141b5c;outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Paper pill for secondary actions.",
+      "html": "<a class=\"ds-ghost\" href=\"#\">See how</a>",
+      "css": ".ds-ghost{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid #141b5c;background:#f6f1e7;color:#141b5c;font:800 17px Archivo,system-ui,sans-serif;text-decoration:none;transition:translate .4s cubic-bezier(.16,1,.3,1)}.ds-ghost:hover{translate:0 -3px}.ds-ghost:focus-visible{outline:3px solid #141b5c;outline-offset:3px}"
+    },
+    {
+      "name": "Segmented Ratio Control",
+      "kind": "chip",
+      "refersTo": "ratio-segment-selected",
+      "description": "Joined pill radio group; checked segment fills sunflower.",
+      "html": "<div class=\"ds-seg\"><label>9:16</label><label class=\"on\">1:1</label><label>16:9</label></div>",
+      "css": ".ds-seg{display:flex;font:16px Archivo,system-ui,sans-serif;background:#24349e;padding:12px;border-radius:22px}.ds-seg label{padding:8px 18px;min-height:44px;line-height:26px;border:1px solid #7586dc;margin-left:-1px;color:#f6f1e7;cursor:pointer}.ds-seg label:first-child{margin-left:0;border-radius:999px 0 0 999px}.ds-seg label:last-child{border-radius:0 999px 999px 0}.ds-seg .on{background:#ffd23f;border-color:#ffd23f;color:#141b5c;font-weight:800}.ds-seg label:hover{border-color:#f6f1e7}"
+    },
+    {
+      "name": "Editor Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Riso-blue input with yellow focus ring.",
+      "html": "<input class=\"ds-field\" value=\"One word\">",
+      "css": ".ds-field{font:18px Archivo,system-ui,sans-serif;color:#f6f1e7;background:#172478;border:1px solid #7586dc;border-radius:14px;padding:9px 12px;min-height:44px;caret-color:#ffd23f}.ds-field:focus-visible{outline:2px solid #ffd23f;outline-offset:3px}"
+    },
+    {
+      "name": "Nav Pill",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Paper rail of pill links with a sticker action.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">How</a><a href=\"#\">Formats</a><a class=\"ds-go\" href=\"#\">Open editor</a></nav>",
+      "css": ".ds-nav{display:inline-flex;align-items:center;gap:4px;padding:5px;border-radius:999px;background:#f6f1e7;box-shadow:0 12px 26px -16px rgba(20,27,92,.6);font:650 15px Archivo,system-ui,sans-serif}.ds-nav a{padding:10px 14px;border-radius:999px;color:#141b5c;text-decoration:none}.ds-nav a:hover{background:#ffe3ef}.ds-nav .ds-go{background:#ffd23f;font-weight:800}"
+    },
+    {
+      "name": "Demo Plate",
+      "kind": "card",
+      "refersTo": "demo-plate",
+      "description": "Navy plate tilted on the poster with a multiplied pink second plate.",
+      "html": "<div class=\"ds-plate\"><div class=\"ds-bar\"><span>Plate 01 \u00b7 1080p</span><span>12 cuts/s</span></div><div class=\"ds-vid\"></div></div>",
+      "css": ".ds-plate{position:relative;isolation:isolate;background:#141b5c;color:#f6f1e7;border-radius:22px;padding:12px 12px 14px;rotate:-1.5deg;box-shadow:0 40px 70px -30px rgba(20,27,92,.85);transition:rotate .6s cubic-bezier(.16,1,.3,1);margin:14px;width:280px}.ds-plate::before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:#ff4f9a;translate:10px 9px;mix-blend-mode:multiply}.ds-plate:hover{rotate:0deg}.ds-bar{display:flex;justify-content:space-between;padding:2px 6px 10px;font:800 12px Archivo,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#ffd23f}.ds-vid{height:120px;border-radius:14px;background:#000}"
+    },
+    {
+      "name": "Overprint Head",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Display head with off-register second plate and held-word mark.",
+      "html": "<h2 class=\"ds-head\">Give a <mark>word</mark><br>the spotlight.</h2>",
+      "css": ".ds-head{margin:0;font:900 48px/.92 Archivo,system-ui,sans-serif;font-stretch:125%;text-transform:uppercase;letter-spacing:-.03em;color:#141b5c;text-shadow:.045em .035em 0 #ff4f9a}.ds-head mark{background:#ffd23f;color:#141b5c;padding:0 .12em;border-radius:.12em;text-shadow:none}"
+    },
+    {
+      "name": "Plate Trim",
+      "kind": "custom",
+      "refersTo": "colors.navy-ink",
+      "description": "Crop marks and plate slug at a section corner.",
+      "html": "<section class=\"ds-sec\"><span class=\"ds-trim\"><span class=\"ds-slug\">Plate 02 \u00b7 Fluo pink</span></span></section>",
+      "css": ".ds-sec{position:relative;height:120px;background:#ff4f9a;color:#141b5c}.ds-trim{position:absolute;inset:18px}.ds-trim::before,.ds-trim::after{content:'';position:absolute;width:22px;height:22px;border:0 solid currentColor;opacity:.7}.ds-trim::before{left:0;top:0;border-width:1.5px 0 0 1.5px}.ds-trim::after{right:0;bottom:0;border-width:0 1.5px 1.5px 0}.ds-slug{position:absolute;right:34px;bottom:-3px;font:800 11px Archivo,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Riso Gig Poster",
+    "overview": "**Creative North Star: \"The Riso Gig Poster\"**\n\nPressflick is a risograph gig poster: inks overprinted on paper, one word printed hot. Warm paper and deep riso blue are the two grounds; fluorescent pink, riso blue, sunflower and teal are the inks. Where two inks cross they multiply, and a second plate lands a hair off register. Sunflower yellow is also the held word of the product, so it is the single loudest colour wherever it appears.\n\nThe landing page (Persuade) lets each section be printed in one ink, with a slow split-fountain gradient behind the hero and a halftone screen of uneven coverage. The editor and the legal pages (Operate) take the same world as precise detail only: riso-blue ground, a faint dot screen, pill controls, yellow for the one active thing. Content stays plain and legible in the editor; the poster gestures live on the landing.\n\nThe contact-sheet frames and ratio thumbnails stay full colour, never duotoned: the yellow held word in real export frames is the product proof (owner decision at finish review).",
+    "keyCharacteristics": [
+      "Two grounds (paper, riso blue), four inks, ink navy for text on light.",
+      "Pill buttons as stickers; 22px / 18px rounded containers.",
+      "Overprint: a hard-edged, zero-blur offset second plate on display heads and plates, multiplied.",
+      "Halftone dot screen (7px pitch) as the only texture.",
+      "Trim furniture: crop marks and plate slugs at section corners.",
+      "Archivo only, expanded (wdth 125) heavy uppercase for display."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Per Plate Rule",
+        "body": "A landing section is printed in one ground (pink, blue, yellow or paper) with its own overprint colour; do not mix two grounds inside a section.",
+        "section": "colors"
+      },
+      {
+        "name": "The Held Word Rule",
+        "body": "Sunflower marks the one thing being held or chosen. If everything is yellow, nothing is held.",
+        "section": "colors"
+      },
+      {
+        "name": "The Multiply Rule",
+        "body": "Overlaps between inks are drawn with `mix-blend-mode: multiply`, never with opacity.",
+        "section": "colors"
+      },
+      {
+        "name": "The Off-Register Rule",
+        "body": "Display heads get the `.overprint` second plate (`text-shadow: .045em .035em 0`, zero blur) in the section's overprint colour. No blurred text shadows.",
+        "section": "typography"
+      },
+      {
+        "name": "The Expanded Heads Rule",
+        "body": "Uppercase only goes with wdth 125 and weight 800-900; body copy is never uppercase.",
+        "section": "typography"
+      },
+      {
+        "name": "The Second Plate Rule",
+        "body": "Depth on a key object is a multiplied pink copy of its shape, offset 9-10px (5px under 640px). Shadows stay soft and low; the offset plate is the only hard-edged depth.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** print each landing section in one ground with its own overprint colour (pink, blue, yellow, paper).",
+      "**Do** use pills for all interactive controls and keep 44px minimum targets.",
+      "**Do** use sunflower for the single active or held thing and navy ink on it.",
+      "**Do** build overlaps with `multiply` and offset hard plates by 9-10px.",
+      "**Do** keep real export frames full colour.",
+      "**Do** honour `prefers-reduced-motion`: fountain and ticker stop, transitions collapse."
+    ],
+    "donts": [
+      "**Don't** blur text shadows or add glow; offsets are zero-blur.",
+      "**Don't** return to the dark tool page with a glow or the cream editorial landing.",
+      "**Don't** introduce a second typeface or ship uppercase body copy.",
+      "**Don't** put yellow text on paper (contrast); yellow is a fill with navy text, or text on navy and blue.",
+      "**Don't** duotone the contact-sheet frames."
+    ]
+  }
+}

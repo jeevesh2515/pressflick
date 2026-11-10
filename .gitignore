@@ -1,5 +1,16 @@
 # private working notes and recon of the original app
 replica/
 .gstack/
+.claude/
 node_modules/
+test-results/
+playwright-report/
+dist/
 .DS_Store
+
+# local design decisions and review captures
+.impeccable/*
+!.impeccable/design.json
+
+# generated hosting bundles
+release/

@@ -1,27 +1,19 @@
 # Security and privacy
 
-## Surface
+Independent local security review dated 9 November 2026: `docs/reviews/security-review.md`. This review and its concrete synthetic probes supersede the original builder-only claim. No production security clearance is implied.
 
-There is no server code, no database, no login, no payment, no API key, no third-party script and no cookie. The site is static files.
+## Surface and controls
 
-## What is in place
+Static files; no application backend, database, login, payments, cookies, telemetry or API key. One vendored MIT MP4 muxer, no runtime CDN. User text is drawn with canvas or textContent. The fragment-based share URL is not sent in an HTTP request; anyone receiving a link can read its phrase. Native form controls constrain allowlisted shared settings, with an80-code-unit text cap and integer focus validation.
 
-- **Content Security Policy** in `index.html`: only same-origin scripts and styles, `blob:` media, no inline script, `base-uri 'none'`, `form-action 'none'`.
-- **No HTML injection path.** User text is written with `textContent` and canvas `fillText`, never `innerHTML`. URL parameters only set form values.
-- **No network calls.** The phrase never leaves the page. A copied share link does contain the phrase, by design.
-- **One dependency**, mp4-muxer 5.2.2 (MIT), copied into `src/vendor/` from npm on 2026-11-09. It was checked for network calls and dynamic code (`fetch`, `XMLHttpRequest`, `eval`, `new Function`, `WebSocket`): none. It is not fetched at run time or install time, so it cannot change under us.
-- **No secrets** in the repo. There are none to have.
+The independent reviewer reproduced the former query-string disclosure and verified the new fragment-based HTTP boundary, bounded malformed state and an HTML-injection marker. Exact evidence/limitations are in that report. Host request logs may include IP/time. The privacy contact is the address explicitly authorized by the owner in this chat.
 
-## To do at deploy
+All three HTML pages have CSP meta tags and no-referrer meta policy. `_headers` adds response CSP with frame-ancestors none, nosniff, no-referrer and HSTS. Static output is an allowlist from `scripts/prepare-site.mjs`; do not deploy the checkout root. `npm start` binds loopback. Development test dependencies are excluded from distribution.
 
-- Send the CSP as a response header as well, and add `X-Content-Type-Options: nosniff`, `Referrer-Policy: no-referrer`, `frame-ancestors 'none'`.
-- HTTPS only, with HSTS.
-- If analytics are ever added, use a cookieless one and say so in the privacy page.
+## Verification limits
 
-## Not reviewed
-
-No independent security review has been run. The claims above come from reading our own code.
+`npm audit` covers the locked development toolchain, not vendored code. Reviewer checked the vendored package separately against OSV; no advisory returned in that query, which is not proof of absence. No exhaustive dependency audit, human penetration test, physical-device testing or production response-header check. The host/domain have not been provisioned; no account/DNS/publication changes were made. No claim that static files remove all security risk.
 
 ## Reporting
 
-Open a private security advisory on the GitHub repo once it exists.
+Use the contact in privacy.html. Public GitHub issue/advisory access remains unavailable while the source repository is private. Do not post sensitive phrases or generated private content in a public report.

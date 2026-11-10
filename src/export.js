@@ -37,33 +37,49 @@ export async function renderMp4(o, onProgress = () => {}) {
   const fail = (e) => { failed ??= e; };
 
   const venc = new VideoEncoder({ output: (chunk, meta) => muxer.addVideoChunk(chunk, meta), error: fail });
-  venc.configure(videoConfig(W, H));
-  const canvas = Object.assign(document.createElement('canvas'), { width: W, height: H });
-  const ctx = canvas.getContext('2d');
-  for (let i = 0, last = -1; i < frames && !failed; i++) {
-    const cut = cutAt(i, FPS, o.cps), fresh = cut !== last;
-    if (fresh) drawCut(ctx, W, H, { ...o, cut });
-    last = cut;
-    const frame = new VideoFrame(canvas, { timestamp: (i * 1e6) / FPS, duration: 1e6 / FPS });
-    venc.encode(frame, { keyFrame: fresh }); // every cut is a new picture, so it starts a new key frame
-    frame.close();
-    if (venc.encodeQueueSize > 4) await new Promise((r) => setTimeout(r));
-    onProgress(i / frames);
+  try {
+    venc.configure(videoConfig(W, H));
+    const canvas = Object.assign(document.createElement('canvas'), { width: W, height: H });
+    const ctx = canvas.getContext('2d');
+    for (let i = 0, last = -1, yielded = performance.now(); i < frames && !failed; i++) {
+      const cut = cutAt(i, FPS, o.cps), fresh = cut !== last;
+      if (fresh) drawCut(ctx, W, H, { ...o, cut });
+      last = cut;
+      const frame = new VideoFrame(canvas, { timestamp: (i * 1e6) / FPS, duration: 1e6 / FPS });
+      try {
+        venc.encode(frame, { keyFrame: fresh }); // every cut is a new picture, so it starts a new key frame
+      } finally {
+        frame.close();
+      }
+      while (venc.encodeQueueSize > 4 && !failed) await new Promise((r) => setTimeout(r, 1));
+      if (performance.now() - yielded >= 16) {
+        await new Promise((r) => setTimeout(r, 0));
+        yielded = performance.now();
+      }
+      onProgress(i / frames);
+    }
+    await venc.flush();
+  } finally {
+    if (venc.state !== 'closed') venc.close();
   }
-  await venc.flush();
-  venc.close();
 
   if (audio) {
     const oac = new OfflineAudioContext(1, Math.ceil(o.duration * RATE), RATE);
     for (let k = 0; k < cutCount(o.duration, o.cps); k++) click(oac, oac.destination, o.sound, k / o.cps);
     const pcm = (await oac.startRendering()).getChannelData(0);
     const aenc = new AudioEncoder({ output: (chunk, meta) => muxer.addAudioChunk(chunk, meta), error: fail });
-    aenc.configure(audio.cfg);
-    const data = new AudioData({ format: 'f32-planar', sampleRate: RATE, numberOfFrames: pcm.length, numberOfChannels: 1, timestamp: 0, data: pcm });
-    aenc.encode(data);
-    data.close();
-    await aenc.flush();
-    aenc.close();
+    try {
+      aenc.configure(audio.cfg);
+      const data = new AudioData({ format: 'f32-planar', sampleRate: RATE, numberOfFrames: pcm.length, numberOfChannels: 1, timestamp: 0, data: pcm });
+      try {
+        aenc.encode(data);
+      } finally {
+        data.close();
+      }
+      await aenc.flush();
+    } finally {
+      if (aenc.state !== 'closed') aenc.close();
+    }
   }
 
   if (failed) throw failed;
