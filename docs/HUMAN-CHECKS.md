@@ -1,6 +1,8 @@
 # Human launch checks
 
-These checks have no result yet. Record date, device/browser version, filename and pass/fail details; do not fill in a pass without doing the step.
+**Owner-reported complete — 10 November 2026.** The owner stated “All the human checks are done” for the site before this creator-landing upgrade (revision93ae3a0). This is recorded as an owner-reported pass for the checklist below, not an independently witnessed result. Device/browser versions, filenames, individual observations and import-app names were not supplied; none are invented here.
+
+The reproducible checklist is retained below. New starter/inspector/share controls were added after that confirmation; their automated coverage is recorded separately in VERIFICATION.md.
 
 1. Play assets/pressflick-demo.mp4 with sound. Watch the whole clip; judge word lock, readable typography, blur and clicks on each visual cut. Listen for gaps, harsh/clipped noise and delayed or drifting cuts. Root verified ffplay execution and audio energy, not subjective quality.
 2. In physical Safari (macOS and/or iPhone), and one Android/phone browser, create a short MP4 and WebM, then the10s landscape clip. Save and replay both video and sound. Report explicit unsupported/fallback status rather than treating a changed file extension as MP4 success. Keep real-time recording visible.

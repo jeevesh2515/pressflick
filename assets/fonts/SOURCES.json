@@ -7,5 +7,14 @@
     "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/archivo/OFL.txt",
     "bytes": 90096,
     "sha256": "4c98b9d490d1698ec95f2ff17a6c7d0e72691864c0c5d7bc2a2c161b45afe5ad"
+  },
+  {
+    "family": "Montagu Slab",
+    "file": "montagu-slab-latin.woff2",
+    "axes": "opsz 16, wght 500-700",
+    "source": "https://fonts.gstatic.com/s/montaguslab/v17/6qLSKZIQtB_zv0xUaXRDWkY_HXsphdLRZF40vv_h5xGLd7V4bjk.woff2",
+    "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/montaguslab/OFL.txt",
+    "bytes": 46868,
+    "sha256": "5a2834c051ed2e9d0a224f59e0368ee9f2f21e5a338931958968bee7f4289161"
   }
 ]

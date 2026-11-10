@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Archivo";
+  src: url("assets/fonts/archivo-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montagu Slab";
+  src: url("assets/fonts/montagu-slab-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+}
+
+:root {
+  --body-font: Rockwell, "Montagu Slab", Georgia, serif;
+  --display-font: "Archivo", system-ui, sans-serif;
+}
+
+h1, h2, h3, .wordmark, .logo { font-family: var(--display-font); font-style: normal; }
+
+@media (hover: hover) and (pointer: fine) {
+  .focus-word:hover { background-color: #ffd23f; color: #141b5c; border-radius: .08em; }
+}

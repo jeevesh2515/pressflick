@@ -5,6 +5,7 @@ import { mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileS
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { STARTERS } from '../src/presets.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const script = join(root, 'scripts/prepare-site.mjs');
@@ -18,6 +19,7 @@ test('static package contains public files and licences, with no development/pri
   pack(dir);
   const files = readdirSync(join(dir, 'site'), { recursive: true });
   for (const file of ['index.html', 'editor.html', '404.html', '_headers', 'vercel.json', 'LICENSE', 'src/vendor/mp4-muxer.LICENSE', 'assets/fonts/archivo-OFL.txt', 'assets/fonts/archivo-latin.woff2', 'assets/fonts/SOURCES.json', 'assets/ratio-9x16.webp']) assert.ok(files.includes(file), file);
+  for (const file of ['src/presets.js', 'type.css', 'word-focus.js', 'assets/fonts/montagu-slab-latin.woff2', 'assets/fonts/montagu-slab-OFL.txt', ...STARTERS.flatMap(({ video, poster }) => [video, poster])]) assert.ok(files.includes(file), file);
   assert.ok(!files.some((file) => /(^|\/)(replica|\.gstack|\.impeccable|\.git|node_modules|docs|test)(\/|$)/.test(file)));
   assert.ok(!files.some((file) => /\.(?:png|jpe?g|webp|avif|gif)\.json$/i.test(file)));
   assert.equal(readFileSync(join(dir, 'site/index.html'), 'utf8'), readFileSync(join(root, 'index.html'), 'utf8'));

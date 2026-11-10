@@ -1,0 +1,21 @@
+{
+  "prompt": "Origin: original Pressflick Download video UI export in local Chromium, then ffmpeg frame extraction at 0.45 seconds, resized to a maximum 720px long edge and encoded with cwebp -q 80. Generated newspaper filler, system fonts, and locally synthesized sound; not AI-generated, stock, or copied media.",
+  "createdAt": "2026-11-10T16:46:49.548Z",
+  "settings": {
+    "text": "Make the next move",
+    "focus": 2,
+    "seed": 918,
+    "ratio": "16:9",
+    "format": "mp4",
+    "duration": 3,
+    "cps": 10,
+    "zoom": 1.4,
+    "blur": 0.8,
+    "style": "newsprint",
+    "highlight": "#ffd23f",
+    "sound": "shutter"
+  },
+  "source": "assets/starter-next-move.mp4",
+  "sourceSha256": "4e4dd18dbcbab7bff3f49642775aee7632defa850cfff8ca5be22d114b856be1",
+  "sha256": "455708e8af43c94c96060fff7446378077b38603e8517a555b6295b4e11165aa"
+}

@@ -1,0 +1,21 @@
+{
+  "prompt": "Origin: original Pressflick Download video UI export in local Chromium, then ffmpeg frame extraction at 0.45 seconds, resized to a maximum 720px long edge and encoded with cwebp -q 80. Generated newspaper filler, system fonts, and locally synthesized sound; not AI-generated, stock, or copied media.",
+  "createdAt": "2026-11-10T16:46:49.548Z",
+  "settings": {
+    "text": "Turn the noise down",
+    "focus": 2,
+    "seed": 223,
+    "ratio": "1:1",
+    "format": "mp4",
+    "duration": 3,
+    "cps": 6,
+    "zoom": 1.3,
+    "blur": 0.6,
+    "style": "mixed",
+    "highlight": "#ff4f9a",
+    "sound": "film"
+  },
+  "source": "assets/starter-after-hours.mp4",
+  "sourceSha256": "ded76c7038285ad4237daf5dd7f5695c092e0262db9c658e1cd6dbedb94dac69",
+  "sha256": "3f5a5e8c32669c18823d939a54e5876a13e6c3a76ca1d54eacdd9ac8b04b8a47"
+}

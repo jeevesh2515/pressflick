@@ -1,6 +1,6 @@
 # Brand assets
 
-Updated 10 November 2026. The approved landing and editor direction is **Riso gig poster**: paper `#f6f1e7`, navy ink `#141b5c`, riso blue `#1d2b8f`, fluorescent pink `#ff4f9a` and sunflower `#ffd23f`. Archivo is self-hosted under the SIL OFL. The geometric P icon and social artwork remain original yellow-on-black Pressflick vectors; they have not been regenerated as pink artwork. Actual page tokens and layout rules are recorded in `docs/DESIGN.md` and the stylesheets. Earlier pistachio and Film Stock page palettes are historical.
+Updated 10 November 2026. The approved landing and editor direction is **Riso gig poster**: paper `#f6f1e7`, navy ink `#141b5c`, riso blue `#1d2b8f`, fluorescent pink `#ff4f9a` and sunflower `#ffd23f`. Archivo and Montagu Slab are self-hosted under the SIL OFL. The geometric P icon and social artwork remain original yellow-on-black Pressflick vectors; they have not been regenerated as pink artwork. Actual page tokens and layout rules are recorded in `docs/DESIGN.md` and the stylesheets. Earlier pistachio and Film Stock page palettes are historical.
 
 - `favicon.svg`, `favicon.ico` (16/32/48 px) and PNG favicon set.
 - Opaque `assets/icon-1024.png`, 192/512 px manifest icons and 180 px Apple touch icon.

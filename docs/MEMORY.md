@@ -55,3 +55,11 @@ Production update verified as deployment dpl_9VH3CW5NJAApZTPvi22ucCkURepo, with 
 ## Plate-label removal — 10 November 2026
 
 Owner requested removal of the numbered plate/ink-name captions shown at section bottoms. Removed all four captions and the demo’s Plate 01 prefix, retained functional resolution/cut-rate metadata and decorative crop marks, and deleted unused slug CSS. Design records now reflect the change. Verification is recorded in docs/VERIFICATION.md; no editor/export behavior changed.
+
+## Creator activation upgrade — 10 November 2026
+
+The owner reports all human checks complete for the preceding deployed site (93ae3a0); docs/HUMAN-CHECKS.md records that as owner-reported, without invented device/version or per-file evidence. This supersedes earlier statements that no human sign-off exists; it is separate from independently observed automated checks.
+
+The owner requested useful new landing elements after comparing the competitor's public page. Read-only clean-room observation is kept privately. The in-world plan adds original real starter cuts with fragment links, inspection of actual exported frames, actionable format shortcuts and an explicit-click share kit. No competitor code, layout, copy, names or media is reused. Recognition/reach is a goal, not a measured promise; no trackers, social-proof claims, accounts or automatic posting are added.
+
+The owner selected an upright slab serif from the five-second sample. The frame extracted at 1.78 seconds matches the supplied screenshot. Seed 42 and cut 21 select Rockwell at weight 700 in the renderer. The site uses Rockwell when installed and ships Montagu Slab under the SIL OFL as a fallback. Body copy is 20px and individual words highlight on pointer hover. Archivo continues to set headings and wordmarks. The renderer keeps its existing font choices.

@@ -18,7 +18,7 @@ node scripts/prepare-site.mjs release/pressflick-review https://pressflick.verce
 
 Choose another directory if that path already contains files. The script copies an explicit public allowlist without compiling anything. It rejects source symlinks, nonempty output directories and configured origins containing credentials, a non-HTTPS scheme, a path, query or fragment.
 
-The package contains the landing and editor, legal and error pages, CSS, native modules, local assets, manifest, favicons, `_headers`, `vercel.json` and licences. The root MIT licence, vendored muxer MIT licence and Archivo OFL licence must remain present. Font provenance in `assets/fonts/SOURCES.json` is retained; development raster sidecars (`*.webp.json`) are excluded.
+The package contains the landing and editor, legal and error pages, CSS, native modules, local assets, manifest, favicons, `_headers`, `vercel.json` and licences. The root MIT licence, vendored muxer MIT licence and the Archivo and Montagu Slab OFL licences must remain present. Font provenance in `assets/fonts/SOURCES.json` is retained; development raster sidecars (`*.webp.json`) are excluded.
 
 Private notes, docs, tests, package tooling, Git metadata, browser logs and the checkout's hosting-project links are excluded. A new public file must be added to the script's allowlist and asserted in [`../test/package.test.js`](../test/package.test.js). **Never upload or publicly serve the repository root.**
 
@@ -72,7 +72,7 @@ Live header and 404 inspection is recorded in [the Vercel audit](reviews/vercel-
 
 ## Remaining validation
 
-The app is already public; the earlier launch hold is historical. Physical iOS/Android, screen-reader use, human watch/listen approval, editing/social-app import, low-memory and repeated-export testing remain open. MediaRecorder timing can vary, and in-memory MP4 muxing has device-dependent memory costs. See [export quality](EXPORT-QUALITY.md) and the [human checklist](HUMAN-CHECKS.md). Do not turn desktop automation into claims about every browser or phone.
+The owner reported completion of the human checklist for the preceding release. The creator landing upgrade has separate automated checks. Low-memory and repeated-export stress testing remain open. MediaRecorder timing can vary, and in-memory MP4 muxing has device-dependent memory costs. See [export quality](EXPORT-QUALITY.md) and the [human checklist](HUMAN-CHECKS.md). Do not turn desktop automation into claims about every browser or phone.
 
 ## Optional future hosting or domain
 

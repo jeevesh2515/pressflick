@@ -38,14 +38,16 @@ typography:
     lineHeight: 1
     fontVariation: '"wdth" 125'
   body:
-    fontFamily: '"Archivo", system-ui, sans-serif'
-    fontSize: '17px'
-    fontWeight: 400
+    fontFamily: 'Rockwell, "Montagu Slab", Georgia, serif'
+    fontStyle: normal
+    fontSize: '20px'
+    fontWeight: 500
     lineHeight: 1.55
   label:
-    fontFamily: '"Archivo", system-ui, sans-serif'
-    fontSize: '12px'
-    fontWeight: 800
+    fontFamily: 'Rockwell, "Montagu Slab", Georgia, serif'
+    fontStyle: normal
+    fontSize: '14px'
+    fontWeight: 700
     letterSpacing: '0.14em'
     fontVariation: '"wdth" 125'
 rounded:
@@ -133,7 +135,7 @@ The contact-sheet frames and ratio thumbnails stay full colour, never duotoned: 
 - Overprint: a hard-edged, zero-blur offset second plate on display heads and plates, multiplied.
 - Halftone dot screen (7px pitch) as the only texture.
 - Trim furniture: crop marks at section corners.
-- Archivo only, expanded (wdth 125) heavy uppercase for display.
+- Expanded Archivo for headings and wordmarks, upright slab serif for copy and controls.
 
 ## Colors
 
@@ -160,16 +162,18 @@ Warm paper and ink on ink: five hues plus navy, no neutrals beyond paper-tinted 
 
 ## Typography
 
-**Display / Body / Label Font:** Archivo (variable, wght 100-900, wdth 62-125, self-hosted woff2) with system-ui fallback.
+**Display font.** Self-hosted Archivo, with system-ui fallback.
 
-**Character:** one family at two extremes: expanded black uppercase for heads, normal width for reading. Hierarchy comes from width and weight, not a second face.
+**Body and label font.** Rockwell where installed, with self-hosted Montagu Slab and Georgia fallbacks. Both font definitions live in `type.css`.
+
+**Character.** Expanded uppercase headlines frame the serif copy, which echoes the printed text inside the clips.
 
 ### Hierarchy
 - **Display** (900, clamp(2.9rem, 6.2vw, 5.6rem), 0.92, -0.03em, uppercase, wdth 125): hero h1 only.
 - **Headline** (900, clamp(2.4rem, 5.6vw, 4.6rem), 0.92): section h2; the closing h2 scales to 6rem.
 - **Title** (900, clamp(1.4rem, 2.4vw, 2rem), 1, uppercase): step titles. Editor titles are 18-20px at the same weight and width.
-- **Body** (400-650, 17px, 1.55): copy at 30-62ch; hero intro 550 weight.
-- **Label** (800, 11-14px, 0.1-0.14em, uppercase, wdth 125): demo metadata, figure captions and film-strip status. Furniture inside the object, not an introduction to a heading.
+- **Body** (500, 20px, 1.55): upright slab serif copy, with larger type in the process instructions.
+- **Label** (up to 700, 11–15px, uppercase where used for metadata): demo metadata, figure captions and film-strip status. Furniture inside the object, not an introduction to a heading.
 
 ### Named Rules
 **The Off-Register Rule.** Display heads get the `.overprint` second plate (`text-shadow: .045em .035em 0`, zero blur) in the section's overprint colour. No blurred text shadows.
@@ -247,3 +251,11 @@ Hero fountain: pink, yellow and blue ink bars multiplied over paper, the pink ba
 ## Release accessibility refinements — 10 November 2026
 
 The landing main landmark contains the hero and all five primary sections; the header and footer remain outside it. The mobile header uses a compact wordmark and CTA to fit 320px. A visible Pause page motion / Resume page motion button controls the fountain and ticker without a mouse; reduced-motion disables both automatically. The editor's decorative top gradient is static. Sample playback remains user initiated with native controls available after activation. Evidence: test/e2e/landing.spec.js and docs/reviews/riso-code-review.md. Physical screen-reader and photosensitivity evaluation remain open.
+
+## Creator landing and shared typography
+
+The starter selector pairs a list of three cuts with a stable preview area. Selected settings open the editor through a fragment link. The preview poster gives way to native video controls on play. The inspector brings a selected exported frame into view within the contact strip. Format thumbnails open their corresponding editor aspect ratios. A navy section pairs the sample download with copy and share actions.
+
+The upright slab-serif stack covers descriptions, labels, buttons, metadata and legal copy on every page. The process descriptions use a larger serif size on blue. Archivo remains the display face for headings, wordmarks and large step numerals. The shared stylesheet is `type.css`. Font sources and licences are in `assets/fonts/`.
+
+Words in prose take the sunflower highlight and navy text on pointer hover. Their dimensions stay fixed. The interaction applies to devices with a fine hover pointer.

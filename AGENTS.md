@@ -10,7 +10,7 @@ npm start                       # python3 http.server on http://127.0.0.1:5173 (
 ```
 
 - Landing is `/` (`index.html`); editor is `/editor.html`. They are separate pages; share URLs point at the editor path.
-- Only runtime code lives in `src/` as native ES modules. `src/vendor/mp4-muxer.mjs` is the sole dependency (MIT).
+- The editor uses native ES modules in `src/`. `landing.js` runs landing interactions. `src/vendor/mp4-muxer.mjs` is the sole runtime dependency (MIT). Shared site typography lives in `type.css`.
 - CSP is a `<meta>` tag in `index.html`/`editor.html` (`default-src 'self'`). No inline scripts, no CDN, no eval.
 - Asset generation is dev-only: `node scripts/brand-assets.mjs` (icons/OG images, needs Playwright Chromium).
 

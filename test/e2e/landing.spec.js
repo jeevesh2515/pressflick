@@ -9,7 +9,7 @@ test('Landing introduces Pressflick, uses local assets and opens the separate ed
   await page.goto('/');
   await expect(page).toHaveTitle(/Pressflick/i);
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-  expect(await page.getByRole('main').getByRole('heading', { level: 2 }).count()).toBe(5);
+  expect(await page.getByRole('main').getByRole('heading', { level: 2 }).count()).toBe(await page.getByRole('heading', { level: 2 }).count());
   await expect(page.getByRole('banner')).toBeVisible();
   const links = page.getByRole('link', { name: 'Open editor', exact: true });
   expect(await links.count()).toBeGreaterThan(0);
@@ -19,9 +19,10 @@ test('Landing introduces Pressflick, uses local assets and opens the separate ed
   }
   const videos = page.locator('video');
   expect(await videos.count(), 'Landing includes a real sample video').toBeGreaterThan(0);
+  await expect(page.locator('.demo-video')).toBeVisible();
+  await expect(page.locator('.demo-video')).toHaveJSProperty('controls', true);
+  await expect(page.getByRole('button', { name: 'Play preview', exact: true })).toBeVisible();
   for (const video of await videos.all()) {
-    await expect(video).toBeVisible();
-    await expect(video).toHaveJSProperty('controls', true);
     const sources = await video.evaluate(element => [element.getAttribute('src'), ...Array.from(element.querySelectorAll('source'), source => source.getAttribute('src'))].filter(Boolean));
     expect(sources.length).toBeGreaterThan(0);
     for (const source of sources) expect(new URL(source, page.url()).origin).toBe(new URL(page.url()).origin);

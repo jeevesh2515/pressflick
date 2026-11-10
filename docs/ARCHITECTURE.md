@@ -8,13 +8,19 @@ Static HTML/CSS and native ES modules. No backend, database, account or applicat
 | `src/render.js` | Draw one deterministic cut onto a canvas; reuse two raster layers |
 | `src/audio.js` | Synthesized filtered-noise sounds; no sample files |
 | `src/export.js` | Off-clock WebCodecs video/audio encoding and in-memory MP4 muxing |
+| `src/presets.js` | Authored starter settings, local media paths and editor fragment links |
+| `landing.js` | Starter preview, cut inspection and public site sharing |
+| `type.css` | Shared typefaces and word hover styles |
+| `word-focus.js` | Adds word-level hover targets to prose on devices with a fine pointer |
 | `src/app.js` | Form state, preview, sharing, download and real-time MediaRecorder fallback |
 | `test/e2e/` | Browser flow, capability boundary, playback and accessibility checks |
 | `scripts/prepare-site.mjs` | Copy explicit public allowlist to empty output; no compilation |
 
 ## Pages
 
-The owner requested a separate marketing landing and editor. `index.html` is the landing; `editor.html` carries the existing editor. Share URLs identify the editor path explicitly. Legal pages link to both home and the editor. The final 69-test browser suite covers the separate pages and their navigation; final source hashes are recorded in local verification evidence.
+The owner requested a separate marketing landing and editor. `index.html` is the landing; `editor.html` carries the existing editor. Share URLs identify the editor path explicitly. Legal pages link to both home and the editor. The browser suite covers navigation between these pages and the starter-to-editor settings handoff. See VERIFICATION.md for the results.
+
+Starter videos load when requested. The landing's copy and share controls use the public site URL. Editor copy links include settings and phrase in the fragment.
 
 ## Rendering and export
 

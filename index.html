@@ -23,6 +23,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="type.css">
   <link rel="stylesheet" href="landing.css">
 </head>
 <body>
@@ -31,6 +32,7 @@
     <header class="site-header page-width">
       <a class="wordmark" href="./" aria-label="Pressflick home">pressflick<span aria-hidden="true">.</span></a>
       <nav aria-label="Main navigation">
+        <a class="nav-link" href="#starters">Start a cut</a>
         <a class="nav-link" href="#how-it-works">How it works</a>
         <a class="nav-link" href="#questions">Questions</a>
         <a class="button button-small" href="editor.html">Open editor</a>
@@ -47,6 +49,7 @@
           <div class="hero-actions">
             <a class="button" href="editor.html">Open editor <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
             <a class="button button-ghost" href="#the-cut">See the cuts</a>
+            <a class="hero-starter-link" href="#starters">Find a starting point</a>
           </div>
           <ul class="stickers" aria-label="At a glance">
             <li>Free to make</li>
@@ -88,11 +91,49 @@
   </div>
 
   <div class="sections">
+    <section class="ink-paper starters section-space" id="starters" aria-labelledby="starters-title">
+      <span class="trim" aria-hidden="true"></span>
+      <div class="page-width starter-layout">
+        <div class="starter-intro">
+          <h2 id="starters-title" class="overprint">Find your<br>opening.</h2>
+          <p>Start with a ready-made cut. Keep the rhythm, change the words, make it yours.</p>
+          <div class="starter-choices" role="group" aria-label="Starter cuts">
+            <button class="starter-choice" type="button" disabled data-starter="plot-twist" aria-pressed="true">Plot twist<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+            <button class="starter-choice" type="button" disabled data-starter="after-hours" aria-pressed="false">After hours<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+            <button class="starter-choice" type="button" disabled data-starter="next-move" aria-pressed="false">Next move<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="starter-preview">
+          <div class="starter-stage">
+            <video id="starter-video" controls playsinline preload="none" poster="assets/starter-plot-twist.webp" src="assets/starter-plot-twist.mp4" width="1080" height="1920" aria-label="Starter preview" aria-describedby="starter-warning starter-description">Your browser cannot play this sample. Open the cut in the editor to make your own.</video>
+            <button class="starter-play" id="starter-play" type="button" aria-describedby="starter-warning" hidden>
+              <img id="starter-poster" src="assets/starter-plot-twist.webp" alt="" width="405" height="720">
+              <span class="button button-small">Play preview</span>
+            </button>
+          </div>
+          <div class="starter-details">
+            <div aria-live="polite" aria-atomic="true">
+              <h3 id="starter-name">Plot twist</h3>
+              <p id="starter-description">For the moment your story turns.</p>
+              <p id="starter-settings" class="starter-settings">9:16 · 3 seconds · 12 cuts/s · Paper sound</p>
+            </div>
+            <a id="starter-use" class="button" href="editor.html#text=A+little+plot+twist&amp;focus=2&amp;seed=42&amp;ratio=9%3A16&amp;format=mp4&amp;duration=3&amp;cps=12&amp;zoom=1.5&amp;blur=1&amp;style=newsprint&amp;highlight=%23ffd23f&amp;sound=paper">Use this cut<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <p id="starter-warning" class="starter-warning">Rapid cuts. Previews start paused.</p>
+          <p id="starter-status" class="starter-warning" role="status" hidden></p>
+        </div>
+      </div>
+    </section>
     <section class="ink-pink contact section-space" id="the-cut" aria-labelledby="contact-title">
       <span class="trim" aria-hidden="true"></span>
       <div class="page-width contact-head">
         <h2 id="contact-title" class="overprint">Sixty cuts.<br>One held word.</h2>
-        <p>Six frames pulled from the export above. Every page is redrawn; the held word stays put.</p>
+        <p>Six frames from the five-second demo. Every page is redrawn and the held word stays put.</p>
+      </div>
+      <div class="page-width cut-inspector" hidden>
+        <label for="cut-inspect">Inspect a cut</label>
+        <input id="cut-inspect" type="range" min="1" max="6" value="1" step="1" aria-valuetext="Cut 05" aria-describedby="cut-inspect-out">
+        <output id="cut-inspect-out" for="cut-inspect" aria-live="polite">Cut 05</output>
       </div>
       <div class="contact-track" role="group" aria-label="Frames from the sample export" tabindex="0">
         <ol class="contact-sheet">
@@ -133,11 +174,12 @@
         <div>
           <h2 id="output-title" class="overprint">Ready for<br>your next edit.</h2>
           <p class="output-intro">Make it vertical, square or wide.<br>Download at 1080p, without a watermark.</p>
+          <p class="format-hint">Choose a format to open the editor.</p>
         </div>
         <ul class="formats" aria-label="Supported aspect ratios">
-          <li class="ratio ratio-916"><img src="assets/ratio-9x16.webp" alt="A vertical 9:16 frame from the editor with the held word Everything." width="405" height="720" loading="lazy" decoding="async"><b>9:16</b></li>
-          <li class="ratio ratio-11"><img src="assets/ratio-1x1.webp" alt="A square 1:1 frame from the editor." width="720" height="720" loading="lazy" decoding="async"><b>1:1</b></li>
-          <li class="ratio ratio-169"><img src="assets/ratio-16x9.webp" alt="A wide 16:9 frame from the editor." width="720" height="405" loading="lazy" decoding="async"><b>16:9</b></li>
+          <li class="ratio ratio-916"><a href="editor.html#ratio=9%3A16" aria-label="Open vertical editor, 9:16"><img src="assets/ratio-9x16.webp" alt="A vertical 9:16 frame from the editor with the held word Everything." width="405" height="720" loading="lazy" decoding="async"><b>9:16</b></a></li>
+          <li class="ratio ratio-11"><a href="editor.html#ratio=1%3A1" aria-label="Open square editor, 1:1"><img src="assets/ratio-1x1.webp" alt="A square 1:1 frame from the editor." width="720" height="720" loading="lazy" decoding="async"><b>1:1</b></a></li>
+          <li class="ratio ratio-169"><a href="editor.html#ratio=16%3A9" aria-label="Open landscape editor, 16:9"><img src="assets/ratio-16x9.webp" alt="A wide 16:9 frame from the editor." width="720" height="405" loading="lazy" decoding="async"><b>16:9</b></a></li>
         </ul>
         <dl class="practical-details">
           <div><dt>A file you can use</dt><dd>Choose MP4 or WebM. Available formats depend on your browser.</dd></div>
@@ -161,6 +203,29 @@
       </div>
     </section>
 
+    <section class="share-kit section-space" id="share-kit" aria-labelledby="share-title">
+      <span class="trim" aria-hidden="true"></span>
+      <div class="page-width share-layout">
+        <div class="share-poster">
+          <img src="assets/pressflick-demo.jpg" alt="The held word word in a generated page from the Pressflick sample." width="1920" height="1080" loading="lazy" decoding="async">
+          <a class="sample-download" href="assets/pressflick-demo.mp4" download="pressflick-sample.mp4">Download sample<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 17v4h14v-4"/></svg></a>
+        </div>
+        <div class="share-copy">
+          <h2 id="share-title" class="overprint">Made to<br>pass around.</h2>
+          <p>Send someone a starting point. Download the sample to see how it fits your edit, or share Pressflick so they can make a cut of their own.</p>
+          <div class="share-actions">
+            <button class="button button-ghost" id="copy-site" type="button" hidden>Copy site link</button>
+            <button class="button button-ghost" id="share-site" type="button" hidden>Share Pressflick</button>
+          </div>
+          <div class="site-link-fallback" hidden>
+            <label for="site-link">Site link</label>
+            <input id="site-link" type="url" readonly spellcheck="false">
+          </div>
+          <p id="share-status" class="share-status" role="status"></p>
+        </div>
+      </div>
+    </section>
+
     <section class="closing section-space" aria-labelledby="closing-title">
       <div class="page-width closing-inner">
         <h2 id="closing-title" class="overprint">Give a <mark>word</mark><br>the spotlight.</h2>
@@ -178,6 +243,6 @@
       <nav aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
     </div>
   </footer>
-  <script src="landing.js"></script>
+  <script type="module" src="landing.js"></script>
 </body>
 </html>

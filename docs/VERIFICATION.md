@@ -2,7 +2,7 @@
 
 **The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Release source is on `release/riso-production-readiness`; GitHub main is unchanged and the repository remains private. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
 
-The plate-caption removal follow-up below supersedes only the baseline deployment identity and landing HTML/CSS hashes. All full-audit counts remain historical results for the reviewed baseline.
+The release follow-ups below record their own deployment identities and check results. The creator update is the current release. The owner subsequently reported completion of the human checklist for revision `93ae3a0`. [Human-check record](HUMAN-CHECKS.md)
 
 ## Full-audit production baseline
 
@@ -52,7 +52,7 @@ No open reproduced S1/S2 remains in the checked source and production flows. Tha
 
 ## Owner follow-through
 
-Use [HUMAN-CHECKS.md](HUMAN-CHECKS.md) on the public site before a broad promotional release. No new domain is required to use the existing address. `pressflick.app` remains optional; no domain was bought or DNS changed. Making the repository public remains a separate owner decision.
+The owner’s later confirmation is recorded in [HUMAN-CHECKS.md](HUMAN-CHECKS.md). No new domain is required to use the existing address. `pressflick.app` remains optional; no domain was bought or DNS changed. Making the repository public remains a separate owner decision.
 
 A one-time post-launch research follow-up is scheduled for **10 February 2027 at 09:00 Europe/London**, three calendar months after the owner-confirmed 10 November launch, via automation `pressflick-three-month-research-review`. It requires in-site Reddit/X research, records access limitations, retains the private ten-creators plan and authorizes no outreach. No announcements or creator messages were sent.
 
@@ -60,4 +60,19 @@ A one-time post-launch research follow-up is scheduled for **10 February 2027 at
 
 At the owner's request, removed the four bottom-of-section plate numbers/ink names and the sample's Plate 01 prefix. Crop marks and functional sample metadata remain. Unused slug CSS was deleted; design records updated. No editor or export code changed.
 
-Production is now READY deployment `dpl_HNdPiQ3jB8simaVH1fjnE5nRRBDu` (`pressflick-iwqlfl0cv-jeeveshs-projects-68cc441e.vercel.app`), still served publicly at https://pressflick.vercel.app. This small follow-up ran `npm test` (9/9) and `npx playwright test test/e2e/landing.spec.js` (9/9, three per Chromium/Firefox/WebKit; 13.7s). The full 75-case suite and export/media/performance tests were not rerun for this markup/style deletion. Source/test logs: local `replica/evidence/plate-removal-{unit,e2e}.log`, `plate-removal-results.json`. Live hash and desktop/mobile label checks are recorded in `plate-removal-live.json`; the current 49-file public ZIP was regenerated. No new physical-device or human quality claims are made.
+The plate-caption follow-up deployed as `dpl_HNdPiQ3jB8simaVH1fjnE5nRRBDu` (`pressflick-iwqlfl0cv-jeeveshs-projects-68cc441e.vercel.app`), still served publicly at https://pressflick.vercel.app. This small follow-up ran `npm test` (9/9) and `npx playwright test test/e2e/landing.spec.js` (9/9, three per Chromium/Firefox/WebKit; 13.7s). The full 75-case suite and export/media/performance tests were not rerun for this markup/style deletion. Source/test logs: local `replica/evidence/plate-removal-{unit,e2e}.log`, `plate-removal-results.json`. Live hash and desktop/mobile label checks are recorded in `plate-removal-live.json`; the current 49-file public ZIP was regenerated. No new physical-device or human quality claims are made.
+
+## Starter cuts and slab-serif typography — 10 November 2026
+
+Three original starter exports load their phrase, focal word and settings in the editor. The frame inspector uses six frames from the five-second demo. Format shortcuts select the aspect ratio. The share section offers the demo MP4 and the public site URL. Browser share and clipboard denial are exercised with controlled API outcomes in the test suite.
+
+The owner’s selected frame matches the demo at 1.78 seconds. Cut 21 with seed 42 selects Rockwell at weight 700. Chromium confirmed `Rockwell-Bold` in the larger process descriptions. `type.css` uses Rockwell where available and a locally bundled Montagu Slab fallback. Body copy is 20px and words highlight in yellow on pointer hover. `creator-slab-audit.json` records 55 page, engine and width checks, including 15 checks that force the fallback. A 320px editor overflow under the fallback was corrected.
+
+- Node tests passed 9/9. The full browser run passed 107 of 108 cases. Firefox reported a paragraph height difference smaller than 0.0001 CSS pixel in the hover test. The corrected assertion accounts for fractional coordinates. The focused rerun passed in all three engines. All 108 cases passed across the two runs, with 36 per engine and 111 axe scans. See `creator-slab-{unit,e2e,hover-verified}.log` and `creator-slab-summary.json`.
+- The starter MP4s were generated through the editor’s Download action. Each has 90 H.264 frames at 30 fps and three seconds of video. The AAC tracks extend the container to 3.072 seconds. All three decoded fully and had nonzero audio energy in every cut window. See `starters-browser.json` and `starters-media.json`.
+- The independent visual review covered the creator layout and resolved the inspector attribution. The owner subsequently chose the slab-serif treatment. The final type and hover screenshots and measured fallback checks were reviewed directly. See `.impeccable/review/creator-slab-*` and `creator-slab-audit.json`.
+- The owner-reported manual checks apply to the earlier release. The new interactions were exercised in desktop engines. Native system share sheets and new physical-device behaviour were not independently exercised.
+
+The evidence named above is local under `replica/evidence/`, apart from the screenshot directory and checked-in [finish review](reviews/creator-finish-review.md).
+
+Production is READY on `dpl_653pwXyDswzMrjfmJiJgGpjBKwsF`. All 59 servable files match the 60-file package. Vercel consumes `vercel.json` as configuration. The live audit checked the headers, nested 404 page, private path exclusions, 13 decoded images, word hover, public URL copy, real starter playback and settings handoff in Chromium, Firefox and WebKit. The live clipboard result uses a controlled browser API response. Firefox reported image errors during early rapid-scroll checks. The same WebP decoded with matching bytes in a direct request, and the final walkthrough decoded all images before exercising the controls. Evidence is in `creator-live-audit.json`, `creator-vercel-production.json` and `creator-package-manifest.json`. The distribution ZIP has been regenerated.

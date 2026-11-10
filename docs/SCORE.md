@@ -2,6 +2,8 @@
 
 Updated 10 November 2026 for the Riso release on `release/riso-production-readiness` and its full-audit production baseline `dpl_9VH3CW5NJAApZTPvi22ucCkURepo`. The later plate-caption removal and current deployment are recorded in [verification](VERIFICATION.md); this minor copy/style deletion does not rescore the product. **The owner's ≥8.5 in every area gate remains unmet.** Deployment and automated tests passing do not establish human/device quality.
 
+The owner later reported completion of the human checklist. The new starter and typography release has separate verification and a qualitative design review. The numerical ratings below describe the earlier audit. [Human checks](HUMAN-CHECKS.md) · [Release verification](VERIFICATION.md)
+
 All ratings below are **provisional engineering judgments [Likely]**, not calibrated user-satisfaction measurements. Rule: 8.5 requires observed function, a relevant independent check and no open major finding in the stated scope. Missing material human/device evidence caps the affected area at 8.0. The design review uses its own stated rubric. No average hides a failing area.
 
 | Area | Score /10 | ≥8.5? | Evidence | Deduction / not checked |

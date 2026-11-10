@@ -27,6 +27,12 @@ Free · No watermark · No account · No ads or tracking · MIT licensed
 
 The landing page lives at `/`; the editor lives at `/editor.html`. There is no installation or sign-in step to use either.
 
+## Try and share a cut
+
+- Pick **Plot twist**, **After hours** or **Next move** to preview a real clip and open its settings in the editor. [Starter cuts](https://pressflick.vercel.app/#starters)
+- Step through six frames of the sample with the cut inspector. Select a format thumbnail to open the editor in that aspect ratio.
+- Download the sample MP4 or copy the public site link. Your browser can open its share menu where supported. [Share kit](https://pressflick.vercel.app/#share-kit)
+
 ## What you can make
 
 - **A locked focal word.** Generated newspaper-style pages change around your chosen word; shuffle for a new sequence.
@@ -93,6 +99,7 @@ flowchart LR
 | [`src/audio.js`](src/audio.js) | Synthesized sounds; no recorded samples |
 | [`src/export.js`](src/export.js) | WebCodecs encoding and in-memory MP4 muxing |
 | [`src/app.js`](src/app.js) | Editor state, preview, sharing and real-time recording |
+| [`src/presets.js`](src/presets.js) | Original starter settings and editor links |
 
 The only runtime dependency is the vendored, MIT-licensed [`mp4-muxer`](src/vendor/). Playwright and axe are development tools and are excluded from the hosted package. The [architecture](docs/ARCHITECTURE.md) and [decision record](docs/MEMORY.md) explain the trade-offs.
 
@@ -114,8 +121,8 @@ See [verification](docs/VERIFICATION.md), [export quality](docs/EXPORT-QUALITY.m
 - **WebCodecs MP4** renders and encodes each frame at 30 fps when the browser supports the required codecs. Tested video timing is frame exact; AAC priming and padding can make the audio/container duration slightly longer.
 - **WebM and fallback exports** record in real time with MediaRecorder. Keep the tab visible until it says **Saved**. They can stutter or vary in duration; the saved message and extension identify the actual container.
 - **Capability checks run before export.** Unsupported recording gets a message; failed MP4 encoding can fall back to real-time recording. Controls stay locked while export runs.
-- **Memory and rendering vary by device.** MP4 is muxed in memory, system fonts vary, and older canvas implementations may omit blur. Physical iOS/Android, low-memory and repeated-export testing remain open.
-- **Rapid cuts remain rapid in the exported video.** Reduced motion pauses the initial preview; it does not change the requested export. Human watch/listen, screen-reader and target editing/social-app import checks remain open in the [human checklist](docs/HUMAN-CHECKS.md).
+- **Memory and rendering vary by device.** MP4 is muxed in memory, system fonts vary, and older canvas implementations may omit blur. Low-memory and repeated-export stress testing remain open.
+- **Rapid cuts remain rapid in the exported video.** Reduced motion pauses the initial preview; it does not change the requested export. The owner reported completion of the human checklist for the preceding release. [Human checks](docs/HUMAN-CHECKS.md)
 
 ## Package and host
 
@@ -139,4 +146,4 @@ The generated pages are fictional. Do not present them as real headlines or quot
 
 ## License
 
-[MIT](LICENSE). The vendored muxer retains its MIT licence; the self-hosted Archivo font retains its SIL Open Font License. Asset origins are recorded in [assets/SOURCES.md](assets/SOURCES.md).
+[MIT](LICENSE). The vendored muxer retains its MIT licence; the self-hosted Archivo and Montagu Slab fonts retain their SIL Open Font Licenses. Asset origins are recorded in [assets/SOURCES.md](assets/SOURCES.md).

@@ -9,7 +9,7 @@ if (siteUrl && (siteUrl.protocol !== 'https:' || siteUrl.username || siteUrl.pas
 const htmlOrigin = siteUrl?.origin.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 await mkdir(output, { recursive: true });
 if ((await readdir(output)).length) throw new Error('Output must be empty. Choose a new directory.');
-const entries = ['index.html', 'editor.html', '404.html', 'landing.css', 'landing.js', 'privacy.html', 'terms.html', 'style.css', 'favicon.svg', 'favicon.ico', 'site.webmanifest', '_headers', 'vercel.json', 'LICENSE', 'assets', 'src'];
+const entries = ['index.html', 'editor.html', '404.html', 'landing.css', 'landing.js', 'word-focus.js', 'privacy.html', 'terms.html', 'type.css', 'style.css', 'favicon.svg', 'favicon.ico', 'site.webmanifest', '_headers', 'vercel.json', 'LICENSE', 'assets', 'src'];
 async function rejectLinks(path) {
   const stat = await lstat(path);
   if (stat.isSymbolicLink()) throw new Error(`Refusing symlink: ${path}`);

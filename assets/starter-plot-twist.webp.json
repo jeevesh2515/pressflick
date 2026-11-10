@@ -1,0 +1,21 @@
+{
+  "prompt": "Origin: original Pressflick Download video UI export in local Chromium, then ffmpeg frame extraction at 0.45 seconds, resized to a maximum 720px long edge and encoded with cwebp -q 80. Generated newspaper filler, system fonts, and locally synthesized sound; not AI-generated, stock, or copied media.",
+  "createdAt": "2026-11-10T16:46:49.548Z",
+  "settings": {
+    "text": "A little plot twist",
+    "focus": 2,
+    "seed": 42,
+    "ratio": "9:16",
+    "format": "mp4",
+    "duration": 3,
+    "cps": 12,
+    "zoom": 1.5,
+    "blur": 1,
+    "style": "newsprint",
+    "highlight": "#ffd23f",
+    "sound": "paper"
+  },
+  "source": "assets/starter-plot-twist.mp4",
+  "sourceSha256": "d33b013b2bcfecb49bb4a41e3ed6bafc67e6382da7c311bca95f1aba348c86ff",
+  "sha256": "1940915b4a4139df0741243eb915019eea62be412e14e6f537d757360367fb4e"
+}

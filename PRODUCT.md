@@ -43,4 +43,4 @@ Actual five-second video in assets/pressflick-demo.mp4; generated frames/poster 
 
 ## Accessibility & Inclusion
 
-Reduced-motion preview starts paused, visible focus/labels, readable contrast. Human screen-reader/device review remains pending. Do not autoplay flashing media on landing.
+Reduced-motion preview starts paused, visible focus/labels, readable contrast. The owner reports the human launch checklist complete on10November2026; device/version details were not supplied and the checks were not independently witnessed. Do not autoplay flashing media on landing.
