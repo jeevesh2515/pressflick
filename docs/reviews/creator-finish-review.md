@@ -24,7 +24,7 @@ disposition: fix
 
 ## material_fixes
 
-1. [Certain] Name the five-second demo as the inspector's source. Change “Six frames pulled from the export above” to “Six frames from the five-second demo” so the story stays accurate after starter selection. [index.html](/Users/jeeveshsingale/Replica/index.html:131)
+1. [Certain] Name the five-second demo as the inspector's source. Change “Six frames pulled from the export above” to “Six frames from the five-second demo” so the story stays accurate after starter selection. [index.html](../../index.html)
 
 ## keep
 
@@ -32,7 +32,7 @@ disposition: fix
 
 ## verdict
 
-[Certain] Resolved. The packaged 1440px and 390px inspector captures both identify the five-second demo as the source of the frames. The copy remains readable in Baskervville at both sizes. [Desktop capture](/Users/jeeveshsingale/Replica/.impeccable/review/creator-final-1440-the-cut.png) · [Mobile capture](/Users/jeeveshsingale/Replica/.impeccable/review/creator-final-390-the-cut.png)
+[Certain] Resolved. The packaged 1440px and 390px inspector captures both identify the five-second demo as the source of the frames. The copy remains readable in Baskervville at both sizes. Desktop capture (local capture `creator-final-1440-the-cut.png`, not published) · Mobile capture (local capture `creator-final-390-the-cut.png`, not published)
 
 ## remaining
 
@@ -42,7 +42,7 @@ disposition: ship
 
 ## revised typography
 
-[Certain] The final 1440px and 390px captures show Cormorant Garamond italic on the process descriptions, starter names and actions, share actions, and visible editor copy. The labels and text remain legible with no clipping observed. The 390px editor capture ends at the preview controls, so it does not provide a visual check of the form below. The supplied audit records 30 checks over all five pages and three browser engines with Cormorant Garamond italic loaded, Archivo on the sampled headings, and no document overflow. This verdict covers the font revision. [Mobile process](/Users/jeeveshsingale/Replica/.impeccable/review/creator-calligraphy-390-how-it-works.png) · [Desktop editor](/Users/jeeveshsingale/Replica/.impeccable/review/creator-calligraphy-1440-editor.png)
+[Certain] The final 1440px and 390px captures show Cormorant Garamond italic on the process descriptions, starter names and actions, share actions, and visible editor copy. The labels and text remain legible with no clipping observed. The 390px editor capture ends at the preview controls, so it does not provide a visual check of the form below. The supplied audit records 30 checks over all five pages and three browser engines with Cormorant Garamond italic loaded, Archivo on the sampled headings, and no document overflow. This verdict covers the font revision. Mobile process (local capture `creator-calligraphy-390-how-it-works.png`, not published) · Desktop editor (local capture `creator-calligraphy-1440-editor.png`, not published)
 
 disposition: ship
 

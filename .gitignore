@@ -14,3 +14,7 @@ dist/
 
 # generated hosting bundles
 release/
+
+# deploy links and local secrets
+.vercel/
+.env*

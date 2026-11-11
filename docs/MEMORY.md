@@ -69,3 +69,11 @@ The owner selected an upright slab serif from the five-second sample. The frame 
 The landing nav and footer link to the owner's public GitHub profile. The repository is private according to `gh repo view` and returns 404 without credentials. A direct public star link requires the owner's explicit repository visibility decision. The GitHub mark and its MIT licence ship locally with the static bundle.
 
 The public package uses its configured origin for page canonicals, social metadata, homepage `WebSite` microdata and a two-URL sitemap. The editor keeps its `.html` URL and fragment-based share settings. See [verification](VERIFICATION.md) for crawl checks and limits.
+
+## First tagged release — 11 November 2026
+
+The owner requested that both GitHub links target the Pressflick repository and that the release be promoted to `main`. The README GIF is sampled at two frames per second from the real sample MP4. It lives under `docs/` for GitHub and the full-speed MP4 remains available on the site. The versioned release ZIP uses the same public allowlist as Vercel.
+
+## Public repository — 11 November 2026
+
+The owner asked for the repository to be made public. Before the switch, the pushed history was audited for secrets, private recon (`replica/`), personal data and clean-room leaks. `main` is the default and release branch; the merged release branch was deleted. The landing GitHub links resolve without credentials.

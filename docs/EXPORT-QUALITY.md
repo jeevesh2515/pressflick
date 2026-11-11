@@ -1,6 +1,6 @@
 # Export quality evidence
 
-9 November 2026. Actual product exports, not synthetic placeholder media. `assets/pressflick-demo.mp4` is the README hero: seed42, phrase `One word holds still`, focus `word`,16:9,5s,12 cuts/s, default paper sound. Root generated it through the real Download video UI on loopback; reproducible helper is local `replica/evidence/export-quality.mjs`.
+9 November 2026. `assets/pressflick-demo.mp4` is the original export sampled for the README GIF: seed 42, phrase `One word holds still`, focus `word`, 16:9, 5 s, 12 cuts/s, default paper sound. It was generated through the Download video UI on loopback. The helper is local at `replica/evidence/export-quality.mjs`.
 
 ## Checks and their limits
 

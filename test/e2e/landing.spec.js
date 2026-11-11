@@ -60,19 +60,19 @@ test('Landing motion can be paused by keyboard and the sample plays on request',
   await audit(page, testInfo, 'landing-motion-and-play');
 });
 
-test('Hero icon and footer link navigate to the public GitHub profile', async ({ page }) => {
-  const profile = 'https://github.com/jeevesh2515';
-  await page.route(profile, route => route.fulfill({ contentType: 'text/html', body: '<title>GitHub profile</title>' }));
+test('Hero icon and footer link navigate to the Pressflick repository', async ({ page }) => {
+  const repository = 'https://github.com/jeevesh2515/pressflick';
+  await page.route(repository, route => route.fulfill({ contentType: 'text/html', body: '<title>Pressflick on GitHub</title>' }));
   await page.goto('/');
-  const heroLink = page.getByRole('banner').getByRole('link', { name: 'Jeevesh Singale on GitHub' });
+  const heroLink = page.getByRole('banner').getByRole('link', { name: 'Pressflick repository on GitHub' });
   await expect(heroLink.locator('img')).toHaveJSProperty('naturalWidth', 24);
   await heroLink.focus();
   await expect(heroLink).toBeFocused();
   await heroLink.press('Enter');
-  await expect(page).toHaveURL(profile);
+  await expect(page).toHaveURL(repository);
   await page.goto('/');
-  await page.getByRole('contentinfo').getByRole('link', { name: 'Jeevesh Singale on GitHub' }).click();
-  await expect(page).toHaveURL(profile);
+  await page.getByRole('contentinfo').getByRole('link', { name: 'Pressflick repository on GitHub' }).click();
+  await expect(page).toHaveURL(repository);
 });
 
 test('Mobile landing fits the viewport and reduced motion never autoplays samples', async ({ page }, testInfo) => {
@@ -81,7 +81,7 @@ test('Mobile landing fits the viewport and reduced motion never autoplays sample
   await page.goto('/');
   const headerLink = await page.getByRole('banner').getByRole('link', { name: 'Open editor', exact: true }).boundingBox();
   expect(headerLink.x + headerLink.width).toBeLessThanOrEqual(320);
-  const githubLink = await page.getByRole('banner').getByRole('link', { name: 'Jeevesh Singale on GitHub' }).boundingBox();
+  const githubLink = await page.getByRole('banner').getByRole('link', { name: 'Pressflick repository on GitHub' }).boundingBox();
   expect(githubLink.width).toBeGreaterThanOrEqual(44);
   expect(githubLink.height).toBeGreaterThanOrEqual(44);
   expect(githubLink.x).toBeGreaterThanOrEqual(headerLink.x + headerLink.width);

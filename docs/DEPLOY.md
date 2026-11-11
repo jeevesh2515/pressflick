@@ -6,7 +6,7 @@ Pressflick is live at **[https://pressflick.vercel.app](https://pressflick.verce
 
 Production uses **direct CLI uploads of the packaged public files**. The project has no Git integration (`link: null`) and no configured build command, root directory or output directory. There is no application build. [`../vercel.json`](../vercel.json) supplies the static routing and response-header configuration.
 
-The current release work is on `release/riso-production-readiness`; `main` is untouched. The repository stays private. The owner has authorized production updates for this release; repository visibility, a new hosting provider and a custom domain remain separate decisions. No custom domain has been purchased or DNS configured. `pressflick.app` is a possible future domain, not a live address.
+`main` is the default release source. The owner authorized advancing it from `release/riso-production-readiness` for v1.0.0. The owner made the repository public on 11 November 2026 and has authorized production updates for this release. A new hosting provider and a custom domain remain separate decisions. `pressflick.app` is a possible future domain.
 
 ## Package public files only
 

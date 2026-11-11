@@ -1,6 +1,6 @@
 # Release verification — 11 November 2026
 
-**The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Release source is on `release/riso-production-readiness`; GitHub main is unchanged and the repository remains private. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
+**The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Release source is `main` (promoted from `release/riso-production-readiness` on 11 November 2026); the repository is public. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
 
 The release follow-ups below record their own deployment identities and check results. The GitHub and search metadata update is the current release. The owner subsequently reported completion of the human checklist for revision `93ae3a0`. [Human-check record](HUMAN-CHECKS.md)
 

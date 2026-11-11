@@ -1,23 +1,25 @@
 <div align="center">
 
-<img src="assets/icon-192.png" alt="" width="80" height="80">
+<img src="assets/icon-192.png" alt="" width="64" height="64">
 
 # Pressflick
 
-**One word holds still. The page keeps changing.**
+**Free text match-cut generator for 1080p video.**
 
-Turn a phrase into a newspaper-style text match-cut video.<br>
-Choose the word to lock, tune the cuts, and download in 1080p — entirely in your browser.
+Pick a word to hold still while newspaper-style pages change around it.<br>
+Export MP4 or WebM for Shorts, Reels or your next edit, right in your browser.
 
-**[Live demo](https://pressflick.vercel.app) · [Open the editor](https://pressflick.vercel.app/editor.html) · [Watch a real export](assets/pressflick-demo.mp4)**
+**[Open the editor](https://pressflick.vercel.app/editor.html)** · [Website](https://pressflick.vercel.app) · [Latest release](https://github.com/jeevesh2515/pressflick/releases/latest)
 
 Free · No watermark · No account · No ads or tracking · MIT licensed
 
 </div>
 
-[![A real Pressflick export: the word “word” stays centred while newspaper-style pages change](assets/pressflick-demo.jpg)](assets/pressflick-demo.mp4)
+<p align="center">
+  <a href="https://pressflick.vercel.app/#demo"><img src="docs/media/pressflick-preview.gif" width="640" height="360" alt="Pressflick preview. The highlighted word stays centred as newspaper-style pages change around it."></a>
+</p>
 
-*A five-second export made with Pressflick, including synthesized paper sound. Click the poster to watch. Rapid cuts; play when you’re ready. [Export measurements and limits](docs/EXPORT-QUALITY.md).*
+*Slow preview sampled from a real export. [Watch the full-speed sample with sound](https://pressflick.vercel.app/#demo) or [download the MP4](https://pressflick.vercel.app/assets/pressflick-demo.mp4). The full-speed sample contains rapid cuts.*
 
 ## Make a match cut
 
@@ -31,7 +33,7 @@ The landing page lives at `/`; the editor lives at `/editor.html`. There is no i
 
 - Pick **Plot twist**, **After hours** or **Next move** to preview a real clip and open its settings in the editor. [Starter cuts](https://pressflick.vercel.app/#starters)
 - Step through six frames of the sample with the cut inspector. Select a format thumbnail to open the editor in that aspect ratio.
-- Download the sample MP4 or copy the public site link. Your browser can open its share menu where supported. [Share kit](https://pressflick.vercel.app/#share-kit)
+- Download the sample MP4 or copy the public site link. Your browser can open its share menu where supported. [Share kit](https://pressflick.vercel.app/#share-kit) · [Clips and copy for LinkedIn, X and YouTube](docs/SHARE.md)
 
 ## What you can make
 
@@ -126,7 +128,7 @@ See [verification](docs/VERIFICATION.md), [export quality](docs/EXPORT-QUALITY.m
 
 ## Package and host
 
-The app is live on **[Vercel](https://pressflick.vercel.app)**. The source repository remains private. Publishing the repository or changing hosting is a separate owner decision.
+The app is live on **[Vercel](https://pressflick.vercel.app)**. The source is public on GitHub under the MIT licence. Changing hosting or adding a custom domain is a separate owner decision.
 
 Package only the public files into a **new, empty directory**:
 
@@ -134,7 +136,7 @@ Package only the public files into a **new, empty directory**:
 node scripts/prepare-site.mjs release/pressflick-review https://pressflick.vercel.app
 ```
 
-This copies an explicit allowlist without compilation and replaces the marked social-URL placeholder in output HTML. It rejects symlinks and nonempty output directories. **Host that output directory, never the repository root.**
+This copies an explicit allowlist without compilation and sets the canonical, social and sitemap URLs for your host. It rejects symlinks and nonempty output directories. **Host that output directory.** A ready-to-host ZIP is attached to the [latest release](https://github.com/jeevesh2515/pressflick/releases/latest).
 
 [`vercel.json`](vercel.json) supplies the static-site routing and security headers. Follow the [Vercel deployment runbook](docs/DEPLOY.md#vercel-production--10-november-2026) for the CLI workflow and project link; it supersedes the earlier Cloudflare plan. A new public file must be added to the packaging allowlist and covered by the packaging test.
 
