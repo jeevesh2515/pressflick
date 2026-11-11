@@ -70,6 +70,13 @@ mark { background: var(--yellow); color: var(--navy); padding: 0 .12em; border-r
 .site-header nav { display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; background: var(--paper); box-shadow: 0 12px 26px -16px rgba(20, 27, 92, .6); }
 .nav-link { padding: 10px 14px; border-radius: 999px; font-weight: 650; font-size: 17px; text-decoration: none; transition: background-color .2s; }
 .nav-link:hover { background: #ffe3ef; }
+.github-link {
+  display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px;
+  border: 2px solid var(--navy); border-radius: 50%; background: var(--paper);
+  transition: background-color .2s;
+}
+.github-link:hover { background: #ffe3ef; }
+.github-link:focus-visible { outline-color: var(--navy); box-shadow: 0 0 0 7px var(--paper); }
 
 .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding-block: clamp(28px, 5vw, 64px) clamp(64px, 8vw, 110px); }
 .hero h1 { font-size: clamp(2.9rem, 6.2vw, 5.6rem); }
@@ -243,6 +250,11 @@ mark { background: var(--yellow); color: var(--navy); padding: 0 .12em; border-r
   .steps li { grid-template-columns: 64px minmax(0, 1fr); }
   .step-art { display: none; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 400px) {
+  .site-header { gap: 8px; }
+  .site-header .wordmark { font-size: clamp(13px, 4.25vw, 17px); }
+  .site-header .button-small { padding-inline: 8px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

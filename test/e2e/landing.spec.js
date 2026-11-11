@@ -60,12 +60,32 @@ test('Landing motion can be paused by keyboard and the sample plays on request',
   await audit(page, testInfo, 'landing-motion-and-play');
 });
 
+test('Hero icon and footer link navigate to the public GitHub profile', async ({ page }) => {
+  const profile = 'https://github.com/jeevesh2515';
+  await page.route(profile, route => route.fulfill({ contentType: 'text/html', body: '<title>GitHub profile</title>' }));
+  await page.goto('/');
+  const heroLink = page.getByRole('banner').getByRole('link', { name: 'Jeevesh Singale on GitHub' });
+  await expect(heroLink.locator('img')).toHaveJSProperty('naturalWidth', 24);
+  await heroLink.focus();
+  await expect(heroLink).toBeFocused();
+  await heroLink.press('Enter');
+  await expect(page).toHaveURL(profile);
+  await page.goto('/');
+  await page.getByRole('contentinfo').getByRole('link', { name: 'Jeevesh Singale on GitHub' }).click();
+  await expect(page).toHaveURL(profile);
+});
+
 test('Mobile landing fits the viewport and reduced motion never autoplays samples', async ({ page }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.setViewportSize({ width: 320, height: 844 });
   await page.goto('/');
   const headerLink = await page.getByRole('banner').getByRole('link', { name: 'Open editor', exact: true }).boundingBox();
   expect(headerLink.x + headerLink.width).toBeLessThanOrEqual(320);
+  const githubLink = await page.getByRole('banner').getByRole('link', { name: 'Jeevesh Singale on GitHub' }).boundingBox();
+  expect(githubLink.width).toBeGreaterThanOrEqual(44);
+  expect(githubLink.height).toBeGreaterThanOrEqual(44);
+  expect(githubLink.x).toBeGreaterThanOrEqual(headerLink.x + headerLink.width);
+  expect(githubLink.x + githubLink.width).toBeLessThanOrEqual(320);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();

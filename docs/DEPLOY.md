@@ -18,11 +18,11 @@ node scripts/prepare-site.mjs release/pressflick-review https://pressflick.verce
 
 Choose another directory if that path already contains files. The script copies an explicit public allowlist without compiling anything. It rejects source symlinks, nonempty output directories and configured origins containing credentials, a non-HTTPS scheme, a path, query or fragment.
 
-The package contains the landing and editor, legal and error pages, CSS, native modules, local assets, manifest, favicons, `_headers`, `vercel.json` and licences. The root MIT licence, vendored muxer MIT licence and the Archivo and Montagu Slab OFL licences must remain present. Font provenance in `assets/fonts/SOURCES.json` is retained; development raster sidecars (`*.webp.json`) are excluded.
+The package contains the landing and editor, legal and error pages, CSS, native modules, local assets, manifest, favicons, `robots.txt`, `sitemap.xml`, `_headers`, `vercel.json` and licences. Keep the root MIT licence, muxer and GitHub icon MIT licences, and both font OFL licences in the package. Font provenance in `assets/fonts/SOURCES.json` is retained. Development raster sidecars (`*.webp.json`) are excluded.
 
 Private notes, docs, tests, package tooling, Git metadata, browser logs and the checkout's hosting-project links are excluded. A new public file must be added to the script's allowlist and asserted in [`../test/package.test.js`](../test/package.test.js). **Never upload or publicly serve the repository root.**
 
-Always pass the actual production origin for publication. The source retains marked `https://pressflick.example` placeholders; packaging replaces them in output HTML only, with attribute escaping. No domain purchase is needed to use the assigned Vercel origin. A package created without the origin retains placeholders and needs regenerating before publication.
+Always pass the actual production origin for publication. Packaging replaces `https://pressflick.example` in HTML and sitemap XML with escaped values and appends an absolute `Sitemap` directive to `robots.txt`. Without an origin the package retains placeholders and needs regenerating before publication.
 
 ## Preserve the Vercel project link
 
@@ -64,6 +64,7 @@ Inspect the deployed response and browser behaviour after every production updat
 - Landing, `/editor.html`, privacy and terms pages load; landing calls to action reach the editor.
 - A synthetic share fragment survives navigation and reproduces the expected settings without putting phrase state in a query.
 - The real sample, poster, captions, local font and modules load from the site. Output social metadata uses `https://pressflick.vercel.app`, with no `pressflick.example` placeholder.
+- `/robots.txt` points to `/sitemap.xml` on the production origin. The sitemap lists the canonical landing and editor URLs, and both return HTTP 200. The page canonicals and Open Graph URLs agree, including for shared editor settings. The error template has `noindex`.
 - Response headers match `vercel.json`: CSP, HSTS, frame denial, MIME protection, no-referrer policy and disabled camera/microphone/geolocation permissions. The CSP still permits local blob video exports without allowing inline scripts or external scripts.
 - Unknown paths return HTTP 404 with the custom error page. Private paths, docs, tests, source-control files and development sidecars are absent from the public package and unavailable over HTTP.
 - The editor previews and downloads usable video; test both the supported WebCodecs path and real-time fallback where available. Capture console, page and resource errors rather than filtering them.

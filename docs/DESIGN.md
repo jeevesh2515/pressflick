@@ -220,7 +220,7 @@ Editor example chips and word toggles are 36px pills; a pressed word fills sunfl
 14px radius, editor-input-bg fill, 1px editor-input-line, 44px; select has a yellow chevron; range uses yellow accent; focus is the global 2px yellow ring with 3px offset.
 
 ### Navigation
-Landing: a paper pill rail with 44px pill links (pink-wash hover) and a small sticker button; links hide under 640px, button stays. Footer is navy with a paper wordmark.
+Landing: a paper pill rail with pink-wash link hover, a small editor sticker and a round 44px GitHub link. At 640px and below, the editor and GitHub links stay visible in the compact header. The navy footer pairs the paper wordmark with privacy, terms and GitHub links.
 
 ### Halftone screen
 `radial-gradient` dots at 7px pitch, multiplied, masked by a diagonal gradient so coverage is uneven. Section screens use the section's own dot colour; the hero and close have their own.

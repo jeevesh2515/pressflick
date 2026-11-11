@@ -41,7 +41,7 @@ npm run test:e2e                            # same suite in 3 engines; counts in
 
 ## Packaging and release
 
-- Never publish or serve the repo root. `node scripts/prepare-site.mjs [outdir] [https origin]` copies an explicit allowlist (no compilation) to an **empty** dir, rejects symlinks, refuses non-HTTPS/auth/path/query/hash origins, and substitutes the marked OG placeholder (`https://pressflick.example`) in output HTML only.
+- Never publish or serve the repo root. `node scripts/prepare-site.mjs [outdir] [https origin]` copies an explicit allowlist (no compilation) to an **empty** dir, rejects symlinks and refuses non-HTTPS/auth/path/query/hash origins. With an origin it substitutes `https://pressflick.example` in HTML and sitemap XML and appends the sitemap URL to `robots.txt`.
 - **A new public file must be added to the `entries` list in `scripts/prepare-site.mjs`**, and `test/package.test.js` asserts the bundle shape. Default output `dist/` is git-ignored.
 - `release/` holds generated hosting bundles; `.impeccable/`, `test-results/`, `playwright-report/`, `dist/` are git-ignored.
 - Production is the existing Vercel project, using direct uploads of this public package. The owner authorized updates for this release. A new host/domain or repository-publication decision requires explicit owner approval; see `docs/DEPLOY.md`.

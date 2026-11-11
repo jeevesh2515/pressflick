@@ -63,3 +63,9 @@ The owner reports all human checks complete for the preceding deployed site (93a
 The owner requested useful new landing elements after comparing the competitor's public page. Read-only clean-room observation is kept privately. The in-world plan adds original real starter cuts with fragment links, inspection of actual exported frames, actionable format shortcuts and an explicit-click share kit. No competitor code, layout, copy, names or media is reused. Recognition/reach is a goal, not a measured promise; no trackers, social-proof claims, accounts or automatic posting are added.
 
 The owner selected an upright slab serif from the five-second sample. The frame extracted at 1.78 seconds matches the supplied screenshot. Seed 42 and cut 21 select Rockwell at weight 700 in the renderer. The site uses Rockwell when installed and ships Montagu Slab under the SIL OFL as a fallback. Body copy is 20px and individual words highlight on pointer hover. Archivo continues to set headings and wordmarks. The renderer keeps its existing font choices.
+
+## GitHub links and search metadata — 11 November 2026
+
+The landing nav and footer link to the owner's public GitHub profile. The repository is private according to `gh repo view` and returns 404 without credentials. A direct public star link requires the owner's explicit repository visibility decision. The GitHub mark and its MIT licence ship locally with the static bundle.
+
+The public package uses its configured origin for page canonicals, social metadata, homepage `WebSite` microdata and a two-URL sitemap. The editor keeps its `.html` URL and fragment-based share settings. See [verification](VERIFICATION.md) for crawl checks and limits.

@@ -20,6 +20,7 @@ test('static package contains public files and licences, with no development/pri
   const files = readdirSync(join(dir, 'site'), { recursive: true });
   for (const file of ['index.html', 'editor.html', '404.html', '_headers', 'vercel.json', 'LICENSE', 'src/vendor/mp4-muxer.LICENSE', 'assets/fonts/archivo-OFL.txt', 'assets/fonts/archivo-latin.woff2', 'assets/fonts/SOURCES.json', 'assets/ratio-9x16.webp']) assert.ok(files.includes(file), file);
   for (const file of ['src/presets.js', 'type.css', 'word-focus.js', 'assets/fonts/montagu-slab-latin.woff2', 'assets/fonts/montagu-slab-OFL.txt', ...STARTERS.flatMap(({ video, poster }) => [video, poster])]) assert.ok(files.includes(file), file);
+  for (const file of ['robots.txt', 'sitemap.xml', 'assets/github-mark.svg', 'assets/github-mark.LICENSE']) assert.ok(files.includes(file), file);
   assert.ok(!files.some((file) => /(^|\/)(replica|\.gstack|\.impeccable|\.git|node_modules|docs|test)(\/|$)/.test(file)));
   assert.ok(!files.some((file) => /\.(?:png|jpe?g|webp|avif|gif)\.json$/i.test(file)));
   assert.equal(readFileSync(join(dir, 'site/index.html'), 'utf8'), readFileSync(join(root, 'index.html'), 'utf8'));
@@ -33,6 +34,15 @@ test('optional site origin replaces only output metadata and escapes attribute/r
     const expected = new URL(origin).origin.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
     assert.ok(html.includes(`content="${expected}/"`), origin);
     assert.ok(!html.includes('https://pressflick.example'), origin);
+    const read = (file) => readFileSync(join(caseDir, 'site', file), 'utf8');
+    assert.ok(html.includes(`<link rel="canonical" href="${expected}/">`), origin);
+    assert.ok(html.includes(`<link itemprop="url" href="${expected}/">`), origin);
+    for (const page of ['editor.html', 'terms.html', 'privacy.html']) {
+      assert.ok(read(page).includes(`<link rel="canonical" href="${expected}/${page}">`), origin);
+    }
+    assert.ok(read('editor.html').includes(`property="og:url" content="${expected}/editor.html"`), origin);
+    assert.deepEqual([...read('sitemap.xml').matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]), [`${expected}/`, `${expected}/editor.html`]);
+    assert.ok(read('robots.txt').includes(`Sitemap: ${new URL(origin).origin}/sitemap.xml\n`), origin);
   }
   assert.ok(readFileSync(join(root, 'index.html'), 'utf8').includes('https://pressflick.example'));
 }));

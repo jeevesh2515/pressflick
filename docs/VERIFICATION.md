@@ -1,8 +1,8 @@
-# Release verification — 10 November 2026
+# Release verification — 11 November 2026
 
 **The deployed technical checks pass; the all-areas 8.5 gate does not.** This is evidence for the tested desktop-engine scope, not a promise of perfect operation on every phone or editing app. Release source is on `release/riso-production-readiness`; GitHub main is unchanged and the repository remains private. The previous pre-launch/Cloudflare and retired-theme results are historical; this report supersedes them for the Riso release.
 
-The release follow-ups below record their own deployment identities and check results. The creator update is the current release. The owner subsequently reported completion of the human checklist for revision `93ae3a0`. [Human-check record](HUMAN-CHECKS.md)
+The release follow-ups below record their own deployment identities and check results. The GitHub and search metadata update is the current release. The owner subsequently reported completion of the human checklist for revision `93ae3a0`. [Human-check record](HUMAN-CHECKS.md)
 
 ## Full-audit production baseline
 
@@ -76,3 +76,10 @@ The owner’s selected frame matches the demo at 1.78 seconds. Cut 21 with seed 
 The evidence named above is local under `replica/evidence/`, apart from the screenshot directory and checked-in [finish review](reviews/creator-finish-review.md).
 
 Production is READY on `dpl_653pwXyDswzMrjfmJiJgGpjBKwsF`. All 59 servable files match the 60-file package. Vercel consumes `vercel.json` as configuration. The live audit checked the headers, nested 404 page, private path exclusions, 13 decoded images, word hover, public URL copy, real starter playback and settings handoff in Chromium, Firefox and WebKit. The live clipboard result uses a controlled browser API response. Firefox reported image errors during early rapid-scroll checks. The same WebP decoded with matching bytes in a direct request, and the final walkthrough decoded all images before exercising the controls. Evidence is in `creator-live-audit.json`, `creator-vercel-production.json` and `creator-package-manifest.json`. The distribution ZIP has been regenerated.
+
+## GitHub links and search metadata — 11 November 2026
+
+- Production deployment `dpl_nqKJ2yDuJXdQwt879UCUX1XtygoZ` is READY. All 63 servable files match the 64-file package by SHA-256. The sitemap and robots file return 200 with the expected types and URLs. The live check validated page canonicals, editor Open Graph URL, homepage `WebSite` fields, social image, security headers and unavailable private paths. Evidence: `replica/evidence/github-seo-production.json` and `github-seo-live.json`.
+- `npm test` passed 9/9. The targeted landing, creator and legal suites passed 51/51, 17 per Chromium, Firefox and WebKit, with 45 axe scans and 51 browser error checks. Two initial Firefox failures exposed a 320px header overflow. The compact header fix passed the rerun and the production smoke test in all three engines. Evidence: `github-seo-initial-results.json`, `github-seo-summary.json` and `github-seo-live-browser.json`.
+- Both GitHub links navigate to the public profile. The browser tests intercepted GitHub navigation to verify the destination. Separate unauthenticated requests returned 200 for the profile and 404 for the private repository. No new export encoding, physical-device or screen-reader checks were run for this change.
+- The independent audit used Firecrawl page scrapes and direct HTTP checks. Firecrawl's map returned no links despite the editor link in the landing HTML. The production checks establish crawl availability. Search engine indexing, rankings and social-platform rendering were unverified.

@@ -1,6 +1,8 @@
 # Asset provenance
 
-All raster illustrations/icons/social art were authored as original geometry in `scripts/brand-assets.mjs` and rasterized with local Chromium. No stock images, copied brand marks or AI image-generation service was used. Raster metadata records this origin; regenerating assets may require restoring that metadata.
+Pressflick raster illustrations, icons and social art were authored as original geometry in `scripts/brand-assets.mjs` and rasterized with local Chromium. Raster metadata records this origin; regenerating assets may require restoring that metadata.
+
+`github-mark.svg` is the [GitHub mark from Octicons v19.21.2](https://github.com/primer/octicons/blob/v19.21.2/icons/mark-github-24.svg), distributed with `github-mark.LICENSE` under MIT.
 
 `pressflick-demo.mp4` is a real Pressflick export with generated filler, system fonts and locally synthesized sound; no sample recordings. `pressflick-demo.jpg`, `cut-left.jpg`, `cut-right.jpg` and the six `cut-sheet-0*.webp` contact-sheet frames are extracted from it with ffmpeg and cwebp (times 0.45, 1.15, 1.85, 2.55, 3.25, 3.95 s). See `docs/EXPORT-QUALITY.md` in the source repository for measurement limits. The generated pages do not reproduce real publications.
 
