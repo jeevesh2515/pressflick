@@ -72,8 +72,14 @@ The public package uses its configured origin for page canonicals, social metada
 
 ## First tagged release — 11 November 2026
 
-The owner requested that both GitHub links target the Pressflick repository and that the release be promoted to `main`. The README GIF is sampled at two frames per second from the real sample MP4. It lives under `docs/` for GitHub and the full-speed MP4 remains available on the site. The versioned release ZIP uses the same public allowlist as Vercel.
+The owner requested that both GitHub links target the Pressflick repository and that the release be promoted to `main`. The README GIFs are sampled at 12 frames per second from real exports, one frame per cut, so they play at full speed. It lives under `docs/` for GitHub and the full-speed MP4 remains available on the site. The versioned release ZIP uses the same public allowlist as Vercel.
 
 ## Public repository — 11 November 2026
 
-The owner asked for the repository to be made public. Before the switch, the pushed history was audited for secrets, private recon (`replica/`), personal data and clean-room leaks. `main` is the default and release branch; the merged release branch was deleted. The landing GitHub links resolve without credentials.
+The owner asked for the repository to be made public. Before the switch, the pushed history was audited for secrets, private recon (`replica/`), personal data and clean-room leaks. `main` is the default and release branch; the release branch is fully merged into it. The landing GitHub links resolve without credentials.
+
+## Platform positioning and search copy — 11 November 2026
+
+The owner wants Pressflick found as the text match-cut maker for every platform and any edit. The output section now names Instagram Reels, YouTube Shorts, TikTok, YouTube, LinkedIn and X, and tells editors (CapCut, Premiere Pro, DaVinci Resolve, Final Cut Pro) to import the MP4 as an intro, hook or title card. A text-only list maps 9:16, 1:1 and 16:9 to platforms; no third-party logos are used and no competitors are named. Three FAQ entries target search intent (platform how-to, editor use, cut speed; the editor range is 4 to 16 cuts per second, default 12). The title and description lead with "text match cut" plus TikTok, Reels and Shorts, with matching og:/twitter: tags. Homepage microdata gains SoftwareApplication (free, web browser) and FAQPage; microdata only, no JSON-LD script, so the CSP is unchanged. Search ranking is a goal, not a measured result.
+
+The editor action row (Download video, Shuffle pages, Copy link) now wraps on desktop instead of overflowing the form at narrow desktop widths or larger text sizes.

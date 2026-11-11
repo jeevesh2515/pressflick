@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pressflick: free text match cut generator, no ads</title>
-  <meta name="description" content="Make a text match-cut video in your browser. Pick a word to hold still and export 1080p MP4 or WebM in 9:16, 1:1 or 16:9. Free, with no ads or signup.">
+  <title>Text Match Cut Maker for TikTok, Reels, Shorts | Pressflick</title>
+  <meta name="description" content="Free text match cut maker for TikTok, Reels, Shorts and any edit. Hold one word still, export 1080p MP4 or WebM in 9:16, 1:1 or 16:9. No signup or watermark.">
   <!-- prepare-site.mjs substitutes the production origin. -->
   <link rel="canonical" href="https://pressflick.example/">
   <meta name="robots" content="max-image-preview:large">
@@ -12,14 +12,16 @@
   <meta name="theme-color" content="#ff4f9a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pressflick">
-  <meta property="og:title" content="Pressflick | Free Text Match Cut Generator">
-  <meta property="og:description" content="Hold one word still while newspaper-style pages change. Make and download 1080p videos in your browser, free and without a watermark.">
+  <meta property="og:title" content="Pressflick | Free Text Match Cut Maker for TikTok, Reels and Shorts">
+  <meta property="og:description" content="Hold one word still while newspaper-style pages change. Make 1080p text match cuts for TikTok, Reels, Shorts and any edit, free and without a watermark.">
   <meta property="og:url" content="https://pressflick.example/">
   <meta property="og:image" content="https://pressflick.example/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Pressflick. One word holds still. The page keeps changing.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pressflick | Free Text Match Cut Maker for TikTok, Reels and Shorts">
+  <meta name="twitter:description" content="Hold one word still while newspaper-style pages change. Make 1080p text match cuts for TikTok, Reels, Shorts and any edit, free and without a watermark.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self' blob:; img-src 'self' data:; base-uri 'none'; form-action 'none'">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
@@ -176,13 +178,23 @@
       </div>
     </section>
 
-    <section class="ink-yellow output section-space" aria-labelledby="output-title">
+    <section class="ink-yellow output section-space" aria-labelledby="output-title" itemscope itemtype="https://schema.org/SoftwareApplication">
+      <meta itemprop="name" content="Pressflick">
+      <meta itemprop="applicationCategory" content="MultimediaApplication">
+      <meta itemprop="operatingSystem" content="Web browser">
+      <meta itemprop="description" content="Free text match cut maker for TikTok, Reels, Shorts, LinkedIn, X and any video editor.">
+      <span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><meta itemprop="price" content="0"><meta itemprop="priceCurrency" content="USD"></span>
       <span class="trim" aria-hidden="true"></span>
       <div class="page-width output-grid">
         <div>
           <h2 id="output-title" class="overprint">Ready for<br>your next edit.</h2>
-          <p class="output-intro">Make a vertical cut for Reels or Shorts, a square clip for feeds, or a wide cut for your next edit. Download at 1080p, without a watermark.</p>
+          <p class="output-intro">Make a text match cut for Instagram Reels, YouTube Shorts, TikTok, YouTube, LinkedIn or X. Download an MP4 at 1080p, without a watermark, then drop it into CapCut, Premiere Pro, DaVinci Resolve or Final Cut Pro as an intro, hook or title card.</p>
           <p class="format-hint">Choose a format to open the editor.</p>
+          <ul class="platforms" aria-label="Where each format fits">
+            <li><b>9:16</b> Reels, Shorts, TikTok</li>
+            <li><b>1:1</b> Feed posts, LinkedIn, X</li>
+            <li><b>16:9</b> YouTube, presentations, edits</li>
+          </ul>
         </div>
         <ul class="formats" aria-label="Supported aspect ratios">
           <li class="ratio ratio-916"><a href="editor.html#ratio=9%3A16" aria-label="Open vertical editor, 9:16"><img src="assets/ratio-9x16.webp" alt="A vertical 9:16 frame from the editor with the held word Everything." width="405" height="720" loading="lazy" decoding="async"><b>9:16</b></a></li>
@@ -201,13 +213,16 @@
       <span class="trim" aria-hidden="true"></span>
       <div class="page-width questions-grid">
         <h2 id="questions-title" class="overprint">Before you make one.</h2>
-        <div class="faq-list">
-          <details><summary>Is Pressflick free?</summary><p>Pressflick is free, MIT-licensed software. You can make and download videos without an account or a watermark, and there are no ads.</p></details>
-          <details><summary>What is a text match cut?</summary><p>A text match cut holds a word in the same spot across a series of shots. In Pressflick, the type and newspaper-style pages change around the word you pick.</p></details>
-          <details><summary>Where does my text go?</summary><p>It stays in your browser. If you copy a share link in the editor, your phrase and settings are included after the # symbol. That part is not sent to the host, but anyone you send the link to can read it.</p></details>
-          <details><summary>Which browsers and video formats work?</summary><p>Export support depends on your browser. MP4 uses frame-exact encoding where supported; WebM and fallback exports record in real time. Keep the tab in front until the download finishes. The editor reports the format it can save.</p></details>
-          <details><summary>Can I use my video for client work?</summary><p>Yes. Your videos are yours to use for personal or commercial work, with no credit needed. The pages are generated, not real newspaper pages. Don’t present invented headlines or quotes as real.</p></details>
-          <details><summary>Does the video flash?</summary><p>The effect uses rapid cuts, which may bother people sensitive to flashing images. This sample starts paused. The editor also starts its preview paused when your device requests reduced motion.</p></details>
+        <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Is Pressflick free?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Pressflick is free, MIT-licensed software. You can make and download videos without an account or a watermark, and there are no ads.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">What is a text match cut?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">A text match cut holds a word in the same spot across a series of shots. In Pressflick, the type and newspaper-style pages change around the word you pick.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Where does my text go?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">It stays in your browser. If you copy a share link in the editor, your phrase and settings are included after the # symbol. That part is not sent to the host, but anyone you send the link to can read it.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Which browsers and video formats work?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Export support depends on your browser. MP4 uses frame-exact encoding where supported; WebM and fallback exports record in real time. Keep the tab in front until the download finishes. The editor reports the format it can save.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Can I use my video for client work?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Yes. Your videos are yours to use for personal or commercial work, with no credit needed. The pages are generated, not real newspaper pages. Don’t present invented headlines or quotes as real.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">How do I make a text match cut for TikTok, Reels or Shorts?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Open the editor, type your phrase, pick the word to hold and choose 9:16. Export a 1080 x 1920 video, then upload it to TikTok, Instagram Reels or YouTube Shorts from your phone or computer.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Can I use the video in CapCut, Premiere Pro, DaVinci Resolve or Final Cut Pro?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Yes. Export an MP4 and import it like any other clip. It works well as an intro, a hook before your footage or a title card. WebM is available where your browser supports it, but MP4 is the safer choice for editors.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">How fast are the cuts?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">About 12 cuts per second by default. The editor’s “Cuts per second” control runs from 4 to 16, so you can slow the effect down or push it harder.</p></div></details>
+          <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><summary itemprop="name">Does the video flash?</summary><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">The effect uses rapid cuts, which may bother people sensitive to flashing images. This sample starts paused. The editor also starts its preview paused when your device requests reduced motion.</p></div></details>
         </div>
       </div>
     </section>

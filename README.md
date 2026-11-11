@@ -6,8 +6,8 @@
 
 **Free text match-cut generator for 1080p video.**
 
-Pick a word to hold still while newspaper-style pages change around it.<br>
-Export MP4 or WebM for Shorts, Reels or your next edit, right in your browser.
+Pick a word to hold still while newspaper-style pages change around it, 12 times a second.<br>
+Make hooks, intros and title cards for TikTok, Instagram Reels, YouTube Shorts, YouTube, LinkedIn, X or any video edit.
 
 **[Open the editor](https://pressflick.vercel.app/editor.html)** · [Website](https://pressflick.vercel.app) · [Latest release](https://github.com/jeevesh2515/pressflick/releases/latest)
 
@@ -16,10 +16,19 @@ Free · No watermark · No account · No ads or tracking · MIT licensed
 </div>
 
 <p align="center">
-  <a href="https://pressflick.vercel.app/#demo"><img src="docs/media/pressflick-preview.gif" width="640" height="360" alt="Pressflick preview. The highlighted word stays centred as newspaper-style pages change around it."></a>
+  <a href="https://pressflick.vercel.app/#demo"><img src="docs/media/pressflick-preview.gif" height="360" alt="A 16:9 Pressflick export at full speed. The highlighted word stays centred as newspaper-style pages change around it."></a>
+  <a href="https://pressflick.vercel.app/#starters"><img src="docs/media/pressflick-vertical.gif" height="360" alt="A 9:16 Pressflick export at full speed for TikTok, Reels and Shorts. The word plot stays in place as the pages change."></a>
 </p>
 
-*Slow preview sampled from a real export. [Watch the full-speed sample with sound](https://pressflick.vercel.app/#demo) or [download the MP4](https://pressflick.vercel.app/assets/pressflick-demo.mp4). The full-speed sample contains rapid cuts.*
+<p align="center"><sub>Real exports at full speed: 16:9 for YouTube and edits, 9:16 for TikTok, Reels and Shorts. Rapid cuts. <a href="https://pressflick.vercel.app/#demo">Watch with sound</a> · <a href="https://pressflick.vercel.app/assets/pressflick-demo.mp4">Download the MP4</a></sub></p>
+
+## Made for every feed
+
+| Format | Use it for |
+| :--- | :--- |
+| **9:16 vertical** | TikTok, Instagram Reels, YouTube Shorts, Stories |
+| **1:1 square** | Instagram and LinkedIn feed posts, X |
+| **16:9 wide** | YouTube intros, title cards, presentations, and any edit in CapCut, Premiere Pro, DaVinci Resolve or Final Cut Pro |
 
 ## Make a match cut
 
