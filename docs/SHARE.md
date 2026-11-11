@@ -6,7 +6,6 @@ Use the public [Pressflick site](https://pressflick.vercel.app) as the link peop
 | --- | --- |
 | [Landscape demo MP4](https://pressflick.vercel.app/assets/pressflick-demo.mp4) | Five-second real export with paper sound for LinkedIn or X |
 | [Vertical starter MP4](https://pressflick.vercel.app/assets/starter-plot-twist.mp4) | Three-second 9:16 real export for a YouTube Short or a vertical edit |
-| [Landscape GIF](media/pressflick-preview.gif) | Silent full-speed loop of the landscape export, 12 frames per second |
 | [Vertical GIF](media/pressflick-vertical.gif) | Silent full-speed loop of the 9:16 starter for TikTok, Reels or Shorts posts |
 
 ## LinkedIn

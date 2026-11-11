@@ -16,11 +16,10 @@ Free · No watermark · No account · No ads or tracking · MIT licensed
 </div>
 
 <p align="center">
-  <a href="https://pressflick.vercel.app/#demo"><img src="docs/media/pressflick-preview.gif" height="360" alt="A 16:9 Pressflick export at full speed. The highlighted word stays centred as newspaper-style pages change around it."></a>
   <a href="https://pressflick.vercel.app/#starters"><img src="docs/media/pressflick-vertical.gif" height="360" alt="A 9:16 Pressflick export at full speed for TikTok, Reels and Shorts. The word plot stays in place as the pages change."></a>
 </p>
 
-<p align="center"><sub>Real exports at full speed: 16:9 for YouTube and edits, 9:16 for TikTok, Reels and Shorts. Rapid cuts. <a href="https://pressflick.vercel.app/#demo">Watch with sound</a> · <a href="https://pressflick.vercel.app/assets/pressflick-demo.mp4">Download the MP4</a></sub></p>
+<p align="center"><sub>A real 9:16 export at full speed, made for TikTok, Reels and Shorts. Rapid cuts. <a href="https://pressflick.vercel.app/#demo">Watch with sound</a> · <a href="https://pressflick.vercel.app/assets/pressflick-demo.mp4">Download the MP4</a></sub></p>
 
 ## Made for every feed
 

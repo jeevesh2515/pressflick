@@ -72,7 +72,7 @@ The public package uses its configured origin for page canonicals, social metada
 
 ## First tagged release — 11 November 2026
 
-The owner requested that both GitHub links target the Pressflick repository and that the release be promoted to `main`. The README GIFs are sampled at 12 frames per second from real exports, one frame per cut, so they play at full speed. It lives under `docs/` for GitHub and the full-speed MP4 remains available on the site. The versioned release ZIP uses the same public allowlist as Vercel.
+The owner requested that both GitHub links target the Pressflick repository and that the release be promoted to `main`. The README GIF is a 9:16 real export sampled at 12 frames per second, one frame per cut, so it plays at full speed; the 16:9 GIF was removed at the owner's request. It lives under `docs/` for GitHub and the full-speed MP4 remains available on the site. The versioned release ZIP uses the same public allowlist as Vercel.
 
 ## Public repository — 11 November 2026
 
